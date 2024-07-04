@@ -21,7 +21,7 @@ export default function Header(sections: Section[]) {
           ))
         }
         <li>
-          <a href="https://alexbrown.nz/" className="hover:[text-shadow:0_0_4px_white] transition-[text-shadow]" target="_blank">Résumé <FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
+          <a href="https://alexbrown.nz/" className="hover:[text-shadow:0_0_4px_white] transition-[text-shadow]" target="_blank">Résumé&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
         </li>
       </ul>
 

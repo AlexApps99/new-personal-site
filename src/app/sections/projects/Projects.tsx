@@ -2,6 +2,7 @@ import { faAngular, faAws, faGitAlt, faJira, faNodeJs, faPython, faReact, faRust
 import {Section} from '../Section';
 import { faArrowUpRightFromSquare, faBolt, faDatabase, faDragon, faFire, faLaptopCode, faLayerGroup, faMicrochip, faMobileAlt, faNetworkWired, faPeopleGroup, faShapes, faShieldHalved, faTerminal, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { WALTER_WHITE } from '@/app/page';
 
 type Project = {
   title: string;
@@ -67,72 +68,100 @@ export default function Projects(): Section {
     {
       title: "Flappy Bird VHDL",
       description: "",
+      yearFrom: 2024,
+      yearTo: 2024,
       tech: ["vhdl", "git", "python", "team"]
     },
     {
       title: "APSS-2 Kessler firmware",
       description: "",
+      yearFrom: 2024,
+      yearTo: 2024,
       tech: ["c", "freertos", "make", "rust", "git", "team", "jira"]
     },
     {
       title: "APSS Pico-SAT 2024",
       description: "",
+      yearFrom: 2024,
+      yearTo: 2024,
       tech: ["cpp", "pcb", "make", "git", "team"]
     },
     {
       title: "Portfolio site, Résumé",
       description: "",
+      yearFrom: 2024,
+      yearTo: 2024,
       tech: ["js", "react"]
     },
     {
       title: "NZ Cyber Security Competition 2024",
       description: "",
+      yearFrom: 2024,
+      yearTo: 2024,
       tech: ["c", "python", "linux", "security", "ghidra", "wireshark"]
     },
     {
       title: "Noted markup language",
       description: "",
+      yearFrom: 2023,
+      yearTo: 2023,
       tech: ["rust", "js"]
     },
     {
       title: "Postgres DB migration",
       description: "",
+      yearFrom: 2024,
+      yearTo: 2024,
       tech: ["js", "sql", "aws", "express", "git", "jira"]
     },
     {
       title: "Mobile MFA login",
       description: "",
+      yearFrom: 2023,
+      yearTo: 2023,
       tech: ["js", "ionic", "angular", "firebase", "git", "jira"]
     },
     {
       title: "Bluetooth temperature probe support",
       description: "",
+      yearFrom: 2023,
+      yearTo: 2023,
       tech: ["js", "ionic", "angular", "wireshark", "git", "jira"]
     },
     {
       title: "Stardome space visualization",
       description: "",
+      yearFrom: 2022,
+      yearTo: 2022,
       tech: ["rust", "opengl"]
     },
     {
       title: "SparkMemes automated YouTube channel",
       description: "",
+      yearFrom: 2018,
+      yearTo: 2022,
       tech: ["python", "linux", "bash"]
     },
     {
       title: "ring_zero, Annihilation Inc.",
       description: "",
+      yearFrom: 2023,
+      yearTo: 2023,
       url: "https://xnopytagameing.itch.io/",
       tech: ["csharp", "opengl", "git", "team"]
     },
     {
       title: "NES Emulator",
       description: "",
+      yearFrom: 2022,
+      yearTo: 2022,
       tech: ["rust", "assembly"],
     },
     {
       title: "Bad Apple!! on CASIO fx-9750GII",
       description: "",
+      yearFrom: 2022,
+      yearTo: 2022,
       tech: ["c", "python", "bash"]
     },
     {
@@ -147,24 +176,34 @@ export default function Projects(): Section {
     name: "Projects",
     element: (
       <>
-        <h2 className="text-xl font-bold">Projects</h2>
+        <h2 className="text-2xl font-bold">Projects</h2>
         <ul className="">
           {PROJECTS.map((project) => (
             <li key={project.title} className="">
-              <figure className="m-2 p-2 border-slate-600 bg-slate-700 border rounded-xl shadow-inner shadow-slate-600 block">
-                <figcaption className="font-bold">{
+              <figure className="m-2 p-2 border-slate-700 bg-slate-900 border rounded shadow-inner shadow-slate-800 block">
+                <figcaption className="font-bold text-xl flex justify-between">
+                  <span className="block">
+                  {
                   (project.url) ?
-                     <a href={project.url} target="_blank">{project.title} <FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
+                     <a href={project.url} target="_blank">{project.title}&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
                   :
                     project.title
-                }</figcaption>
+                  }
+                  </span>
+                  <span className="block text-slate-400 text-sm">{
+                    (project.yearTo == null || project.yearTo == null || project.yearFrom === project.yearTo) ?
+                      (project.yearFrom ?? project.yearTo ?? '')
+                    :
+                      `${project.yearFrom} - ${project.yearTo}`
+                  }</span>
+                </figcaption>
                 {/* <img src={project.image} alt={project.title} className="w-full rounded-t-xl" /> */}
                 <p>
-                  {project.description}
+                  {project.description || WALTER_WHITE}
                 </p>
                 <ul className="flex flex-wrap">
                   {project.tech.map((tech) => (
-                    <li key={tech} className="m-1 rounded-full px-2" style={{"backgroundColor": TECH_CATEGORY_COLOURS[TECHS[tech].category]}}>
+                    <li key={tech} className="m-1 rounded-full px-2 shadow-lg" style={{"backgroundColor": TECH_CATEGORY_COLOURS[TECHS[tech].category]}}>
                       <span className="pr-1"><FontAwesomeIcon icon={TECHS[tech].icon}></FontAwesomeIcon></span>
                       <span>{TECHS[tech].name}</span>
                     </li>
