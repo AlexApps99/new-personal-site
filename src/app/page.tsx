@@ -13,26 +13,16 @@ export default function Home() {
       title: "About Me",
       body: WALTER_WHIPSUM
     }),
-    Projects(),
-    {
-      element: <h2>Posts</h2>,
-      id: "posts",
-      name: "Posts"
-    },
-    {
-      element: <h2>Résumé</h2>,
-      id: "resume",
-      name: "Résumé"
-    }
+    Projects()
   ];
 
   const header = Header(sections);
   return (
-    <div className="flex space-x-2">
+    <div className="flex flex-col md:flex-row">
       {header}
-      <main className="p-8">
+      <main className="p-4 space-y-8 flex-grow max-w-7xl">
         {sections.map((section) => (
-          <section key={section.id} id={section.id}>
+          <section className="" key={section.id} id={section.id}>
             {section.element}
           </section>
         ))}

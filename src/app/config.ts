@@ -4,7 +4,7 @@ import { Inter, Michroma } from "next/font/google";
 
 export const NAME: string = "Alex Brown";
 
-export const TAGLINE: string = "Gamer extraordinaire";
+export const TAGLINE: string = "Problem solver,\nsoftware engineer,\nand student";
 
 export const SOCIALS: {
   name: string;
