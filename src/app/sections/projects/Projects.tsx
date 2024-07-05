@@ -133,6 +133,7 @@ export default function Projects(): Section {
       description: "",
       yearFrom: 2022,
       yearTo: 2022,
+      git: "https://github.com/AlexApps99/stardome",
       tech: ["rust", "opengl"]
     },
     {
@@ -140,6 +141,8 @@ export default function Projects(): Section {
       description: "",
       yearFrom: 2018,
       yearTo: 2022,
+      url: "https://www.youtube.com/@SparkMemes",
+      git: "https://github.com/AlexApps99/SparkMemes",
       tech: ["python", "linux", "bash"]
     },
     {
@@ -166,7 +169,7 @@ export default function Projects(): Section {
     },
     {
       title: "Other?",
-      description: "",
+      description: "See my GitHub for more projects - there are lots of shorter projects and experiments that I haven't listed here.",
       tech: []
     }
   ];
@@ -185,7 +188,7 @@ export default function Projects(): Section {
                   <span className="block">
                   {
                   (project.url) ?
-                     <a href={project.url} target="_blank">{project.title}&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
+                     <a href={project.url} target="_blank" className="glow-hover">{project.title}&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
                   :
                     project.title
                   }

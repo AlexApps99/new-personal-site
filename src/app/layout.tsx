@@ -15,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={TEXT_FONT.className}>{children}</body>
+      <body className={TEXT_FONT.className} style={{
+        'background': 'url(speckle.svg) fixed, black'
+      }}>{children}</body>
     </html>
   );
 }

@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  .glow-hover {
+    @apply hover:[text-shadow:0_0_4px_white];
+    @apply transition-[text-shadow];
+  }
+}

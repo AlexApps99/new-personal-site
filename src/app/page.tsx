@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex flex-col md:flex-row">
       {header}
-      <main className="p-4 space-y-8 flex-grow max-w-7xl">
+      <main className="p-4 space-y-8 flex-grow max-w-4xl pt-16 mx-auto">
         {sections.map((section) => (
           <section className="" key={section.id} id={section.id}>
             {section.element}

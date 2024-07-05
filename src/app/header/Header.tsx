@@ -16,12 +16,12 @@ export default function Header(sections: Section[]) {
         {
           sections.map((section) => (
             <li key={section.id}>
-              <a href={`#${section.id}`} className="hover:[text-shadow:0_0_4px_white] transition-[text-shadow]">{section.name}</a>
+              <a href={`/#${section.id}`} className="glow-hover">{section.name}</a>
             </li>
           ))
         }
         <li>
-          <a href="https://alexbrown.nz/" className="hover:[text-shadow:0_0_4px_white] transition-[text-shadow]" target="_blank">Résumé&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
+          <a href="https://alexbrown.nz/" className="glow-hover" target="_blank">Résumé&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
         </li>
       </ul>
 
@@ -29,8 +29,8 @@ export default function Header(sections: Section[]) {
       <ul className="items-center flex flex-col md:flex-row justify-center md:justify-normal">
         {
           SOCIALS.map((social) => (
-            <li key={social.name} className="m-1">
-              <a href={typeof social.url === 'string' ? social.url : 'about:blank'} title={social.name} className="text-gray-400 transition-colors hover:text-white" target="_blank"><FontAwesomeIcon icon={social.icon} size="1x" fixedWidth /></a>
+            <li key={social.name} className="m-1 text-3xl">
+              <a href={typeof social.url === 'string' ? social.url : 'about:blank'} title={social.name} className="text-gray-400 transition-colors hover:text-white glow-hover" target="_blank"><FontAwesomeIcon icon={social.icon} size="1x" fixedWidth /></a>
             </li>
           ))
         }
