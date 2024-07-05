@@ -2,7 +2,7 @@ import { faAngular, faAws, faGitAlt, faJira, faNodeJs, faPython, faReact, faRust
 import {Section} from '../Section';
 import { faArrowUpRightFromSquare, faBolt, faDatabase, faDragon, faFire, faLaptopCode, faLayerGroup, faMicrochip, faMobileAlt, faNetworkWired, faPeopleGroup, faShapes, faShieldHalved, faTerminal, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { WALTER_WHITE } from '@/app/page';
+import { WALTER_WHITE } from '@/app/config';
 
 type Project = {
   title: string;
