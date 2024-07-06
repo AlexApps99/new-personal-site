@@ -23,6 +23,9 @@ export default function Home() {
             {section.element}
           </section>
         ))}
+        <section className="text-center text-slate-600">
+          <span>&copy; 2024 Alex Brown</span>
+        </section>
       </main>
     </div>
   );
