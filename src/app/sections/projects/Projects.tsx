@@ -17,13 +17,13 @@ type Project = {
 
 type TechnologyCategory = "embedded" | "web" | "game" | "hacking" | "tools" | "other";
 
-const TECH_CATEGORY_COLOURS: { [id: string]: string; } = {
-  embedded: "#934",
-  web: "#49a",
-  game: "#3a4",
-  hacking: "#a63",
-  tools: "#36a",
-  other: "#83a",
+const TECH_CATEGORY_COLOURS: { [id: string]: { fg: string; bg: string; } } = {
+  embedded: { fg: "#f9a", bg: "#823" },
+  web: { fg: "#9ef", bg: "#278" },
+  game: { fg: "#8f9", bg: "#182" },
+  hacking: { fg: "#ea7", bg: "#730" },
+  tools: { fg: "#9cf", bg: "#259" },
+  other: { fg:"#d8f", bg: "#618" },
 };
 
 type Technology = {
@@ -206,7 +206,7 @@ export default function Projects(): Section {
                 </p>
                 <ul className="flex flex-wrap">
                   {project.tech.map((tech) => (
-                    <li key={tech} className="m-1 rounded-full px-2 shadow-lg" style={{"backgroundColor": TECH_CATEGORY_COLOURS[TECHS[tech].category]}}>
+                    <li key={tech} className="m-1 rounded-full px-2 shadow-lg text-sm" style={{"backgroundColor": TECH_CATEGORY_COLOURS[TECHS[tech].category].bg, "color": TECH_CATEGORY_COLOURS[TECHS[tech].category].fg}}>
                       <span className="pr-1"><FontAwesomeIcon icon={TECHS[tech].icon}></FontAwesomeIcon></span>
                       <span>{TECHS[tech].name}</span>
                     </li>
