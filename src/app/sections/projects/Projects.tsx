@@ -2,7 +2,7 @@ import { faAngular, faAws, faGitAlt, faJira, faNodeJs, faPython, faReact, faRust
 import {Section} from '../Section';
 import { faArrowUpRightFromSquare, faBolt, faDatabase, faDragon, faFire, faLaptopCode, faLayerGroup, faMicrochip, faMobileAlt, faNetworkWired, faPeopleGroup, faShapes, faShieldHalved, faTerminal, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { WALTER_WHITE } from '@/app/config';
+import { HEADING_FONT, WALTER_WHITE } from '@/app/config';
 
 type Project = {
   title: string;
@@ -179,7 +179,7 @@ export default function Projects(): Section {
     name: "Projects",
     element: (
       <>
-        <h2 className="text-2xl font-bold">Projects</h2>
+        <h2 className={`text-2xl ${HEADING_FONT.className} !font-bold`}>Projects</h2>
         <ul className="">
           {PROJECTS.map((project) => (
             <li key={project.title} className="">
