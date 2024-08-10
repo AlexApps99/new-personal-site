@@ -6,7 +6,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header(sections: Section[]) {
   return (
-    <header className={`space-x-6 md:space-x-0 md:space-y-12 md:sticky md:top-0 flex md:flex-col max-h-screen p-4 bg-gradient-to-b md:bg-gradient-to-r from-slate-900 from-30% flex-shrink-0 ${HEADING_FONT.className}`}>
+    <header className={`space-x-6 md:space-x-0 md:space-y-12 md:sticky md:top-0 flex md:flex-col max-h-screen p-4 bg-gradient-to-b md:bg-gradient-to-r from-slate-900/75 from-30% flex-shrink-0 ${HEADING_FONT.className}`}>
       <div className="">
         <h1 className="font-bold text-2xl">{NAME}</h1>
         <h2 className="whitespace-pre-line text-slate-400 text-sm">{TAGLINE}</h2>
