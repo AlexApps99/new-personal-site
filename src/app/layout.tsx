@@ -16,8 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={TEXT_FONT.className} style={{
-        'background': 'fixed url(noise64.png) top/256px',
-        'imageRendering': 'pixelated',
+        'background': 'fixed url(noise64.png) 256px, black'
       }}>{children}</body>
     </html>
   );

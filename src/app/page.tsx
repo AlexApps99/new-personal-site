@@ -14,6 +14,9 @@ export default function Home() {
   ];
 
   const header = Header(sections);
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="flex flex-col md:flex-row">
       {header}
@@ -23,8 +26,11 @@ export default function Home() {
             {section.element}
           </section>
         ))}
-        <section className="text-center text-slate-600">
-          <span>&copy; 2024 Alex Brown</span>
+        <section className="text-center text-slate-500">
+          <span>
+            Designed and created with <a className="text-green-400" href="https://nextjs.org/" target="_blank">Next.js</a> and <a className="text-green-400" href="https://tailwindcss.com/" target="_blank">Tailwind</a>, with <a className="text-green-400" href="https://fontawesome.com/" target="_blank">FontAwesome icons</a>.<br/>
+            &copy; Alex Brown, {currentYear}
+          </span>
         </section>
       </main>
     </div>
