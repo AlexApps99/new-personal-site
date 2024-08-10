@@ -22,5 +22,5 @@ if __name__ == '__main__':
   SIZE = 64
   img = make_noise_image(SIZE)
   img = colorize(img, COL1, COL2)
-  img = img.resize((SIZE * 4, SIZE * 4), Image.NEAREST)
-  img.save('public/noise64.png')
+  img = img.resize((SIZE * 8, SIZE * 8), Image.NEAREST)
+  img.save('src/app/noise64.png')

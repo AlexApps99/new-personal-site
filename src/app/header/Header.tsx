@@ -9,7 +9,7 @@ export default function Header(sections: Section[]) {
     <header className={`space-x-6 md:space-x-0 md:space-y-12 md:sticky md:top-0 flex md:flex-col max-h-screen p-4 bg-gradient-to-b md:bg-gradient-to-r from-slate-900/75 from-30% flex-shrink-0 ${HEADING_FONT.className}`}>
       <div className="">
         <h1 className="font-bold text-2xl">{NAME}</h1>
-        <h2 className="whitespace-pre-line text-slate-400 text-sm">{TAGLINE}</h2>
+        <h2 className="whitespace-pre-line text-slate-400 text-sm md:text-base">{TAGLINE}</h2>
       </div>
 
       <ul className="flex-grow">

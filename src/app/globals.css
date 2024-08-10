@@ -10,7 +10,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: fixed url(noise64.png) 256px, black;
+  background: fixed url(noise64.png) left top/512px, black;
 }
 
 @layer utilities {
