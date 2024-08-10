@@ -1,7 +1,7 @@
 from PIL import Image, ImageOps
 from random import random
 
-COL1 = "#080d1a"
+COL1 = "#050b0f"
 COL2 = "#010205"
 
 # step 1.
