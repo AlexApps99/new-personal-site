@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { TEXT_FONT } from "./config";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   description: "Alex Brown's personal website",
 };
 
+export const viewport: Viewport = {
+  themeColor: 'black',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={TEXT_FONT.className} style={{
-        'background': 'fixed url(noise64.png) 256px, black'
-      }}>{children}</body>
+      <body className={TEXT_FONT.className}>{children}</body>
     </html>
   );
 }
