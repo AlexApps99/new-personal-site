@@ -31,7 +31,7 @@ export const SOCIALS: {
 
 export const HEADING_FONT = Michroma({ weight: "400", subsets: ["latin"] });
 
-export const TEXT_FONT = Inter({ subsets: ["latin"] });
+export const TEXT_FONT = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const WALTER_WHITE = `My name is Walter Hartwell White. I live at 308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104. This is my confession. If you're watching this tape, I'm probably dead, murdered by my brother-in-law Hank Schrader. Hank has been building a meth empire for over a year now and using me as his chemist.`;
 
