@@ -8,7 +8,7 @@ export default function About({ title, body }: { title: string; body: string }):
     element: (
       <>
         <h2 className={`text-2xl ${HEADING_FONT.className} !font-bold`}>{title}</h2>
-        <p className="p-2 text-slate-400">{body}</p>
+        <p className="p-2 text-slate-300">{body}</p>
       </>
     )
   };

@@ -1,4 +1,4 @@
-import { WALTER_WHITE } from "./config";
+import { ABOUT_BODY, PROJECTS } from "./config";
 import Header from "./header/Header";
 import type { Section } from "./sections/Section";
 import About from "./sections/about/About";
@@ -8,9 +8,9 @@ export default function Home() {
   const sections: Section[] = [
     About({
       title: "About Me",
-      body: WALTER_WHITE
+      body: ABOUT_BODY
     }),
-    Projects()
+    Projects(PROJECTS)
   ];
 
   const header = Header(sections);
