@@ -10,7 +10,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: fixed url(noise64.png) left top/512px, black;
+  background:
+    fixed linear-gradient(0deg, #19e2, #0f02),
+    fixed url(noise64.png) left top/512px,
+    black;
 }
 
 @layer utilities {
