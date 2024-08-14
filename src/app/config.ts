@@ -5,6 +5,9 @@ import { Project } from "./sections/projects/Projects";
 import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
 import { Twitter } from "next/dist/lib/metadata/types/twitter-types";
 
+// set to null to disable
+export const GOOGLE_ANALYTICS_ID: string | null = "G-MCN4KKHP88";
+
 export const HEADING_FONT = Michroma({ weight: "400", subsets: ["latin"] });
 
 // export const TEXT_FONT = Inter({ weight: ["400", "700"], subsets: ["latin"] });
