@@ -77,7 +77,7 @@ const SUMMARY: JSX.Element = <p>
 </p>;
 
 function skill(text: string): JSX.Element {
-  return <span className="font-bold">{text}</span>;
+  return <b>{text}</b>;
 }
 
 function subheading(title: string, detail?: string | null, info?: string | null, dates?: string, href?: string): JSX.Element {
@@ -103,8 +103,7 @@ const SECTIONS: {
         <li>
           <span><b>Software Engineering Class Representative</b> (2024)</span>
           <p>
-            Advocating for 300 students across 4 courses,
-            {skill('resolving issues')} through communication.
+            Advocating for 300 students across 4 courses, {skill('resolving issues')} through communication.
           </p>
         </li>
         <li>
@@ -222,8 +221,7 @@ const SECTIONS: {
       </li>
       <li>
         <b>Embedded</b>:
-        I have made projects with {skill('Arduino')}, {skill('NodeMCU')} (ESP8266),
-        {skill('Raspberry Pi')}, {skill('RP2040')}, and {skill('MSP430')}, using SPI/I<sup>2</sup>C/UART protocols.
+        I have made projects with {skill('Arduino')}, {skill('NodeMCU')} (ESP8266), {skill('Raspberry Pi')}, {skill('RP2040')}, and {skill('MSP430')}, using SPI/I<sup>2</sup>C/UART protocols.
         I also have experience designing {skill('PCBs')} in KiCAD.
       </li>
       {/* <li>

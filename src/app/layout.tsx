@@ -44,6 +44,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-NZ" className={`scroll-smooth ${TEXT_FONT.className} ${styles.noiseBackground}`}>
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; child-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; base-uri 'self'; form-action 'none';" />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -18,12 +18,12 @@ export type Project = {
 type TechnologyCategory = "embedded" | "web" | "game" | "hacking" | "tools" | "other";
 
 const TECH_CATEGORY_COLOURS: { [id in TechnologyCategory]: { fg: string; bg: string; } } = {
-  embedded: { fg: "#f9a", bg: "#823" },
-  web: { fg: "#9ef", bg: "#278" },
-  game: { fg: "#8f9", bg: "#182" },
-  hacking: { fg: "#ea7", bg: "#730" },
-  tools: { fg: "#9cf", bg: "#259" },
-  other: { fg:"#d8f", bg: "#618" },
+  embedded: { fg: "#fbc", bg: "#712" },
+  web: { fg: "#bff", bg: "#167" },
+  game: { fg: "#afb", bg: "#071" },
+  hacking: { fg: "#fc9", bg: "#620" },
+  tools: { fg: "#bef", bg: "#148" },
+  other: { fg:"#faf", bg: "#507" },
 };
 
 type Technology = {
