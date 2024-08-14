@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glow-hover {
+    @apply hover:[text-shadow:0_0_4px_white];
+    @apply transition-[text-shadow];
+  }
+}
+
+html {
+  /* Set default font */
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.95em;
+
+  display: flex;
+  justify-content: center;
+
+  /* Add a little banner thing to the top of the PDF */
+  /* The SVG renders badly in some PDF viewers, so I use a PNG */
+  background:
+    url("./tile_circuit.png") top/auto 80px repeat-x !important;
+
+  color: black !important;
+}
+
+body {
+
+  background: none !important;
+  color: inherit !important;
+}
+
+/* Smaller font size on small devices */
+@media screen and (max-width: 760px) {
+  html {
+    font-size: 0.8em;
+  }
+}
+
+html > body {
+  margin-top: 7mm;
+  margin-left: 13mm;
+  margin-right: 13mm;
+}
+
+@media screen {
+  html {
+    --edge-col: rgb(223, 253, 223);
+    --edge-percent: 10%;
+
+    background:
+      url("./tile_circuit.png") top/auto 80px repeat-x,
+      linear-gradient(90deg, var(--edge-col), white var(--edge-percent), white calc(100% - var(--edge-percent)), var(--edge-col));
+
+  }
+
+  html > body {
+    margin-bottom: 7mm;
+  }
+}
+
+/* Force the web's width to A4 width */
+@media screen {
+  html > body {
+    max-width: calc(210mm - 2 * 13mm);
+  }
+}
+
+/* Change link color */
+a, a:visited {
+  color: rgb(14, 173, 14);
+}
+
+/* For some things, I want a link that doesn't look like a link */
+a.nostyle {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+/* By default, <address> is usually italicised and display: block, which I don't want */
+address {
+  /* Webkit acts weird with this one */
+  /* all: initial; */
+  display: inline;
+  font-style: normal;
+}
+
+header .heading {
+  /* Spacing between headings while maintaining alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* No upper margin for the title, so it doesn't look weird when printing */
+header .heading .title, header .heading .subtitle {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Italic subtitle */
+header .heading .subtitle {
+  font-style: italic;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+/* Row of contacts, separated by middot */
+header ul.contacts {
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+  display: grid;
+  list-style-type: none;
+
+  /* grid-template-columns: repeat(3, auto); */
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+  header ul.contacts {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+header ul.contacts li {
+  display: block;
+  white-space: nowrap;
+}
+
+
+/* Print layout settings */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+    margin-top: 13mm;
+    margin-bottom: 13mm;
+  }
+
+  @page :first {
+    margin-top: 0mm;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+}
+
+/* Green circular border around section headings */
+section > h2 {
+  background-image: linear-gradient(0deg, rgba(32, 255, 32, 1.0), rgba(32, 255, 32, 0.25));
+  border-radius: 99999px;
+  padding-left: 10px;
+  font-size: 1.2em;
+  /* Hack to fix slight misalignment */
+  padding-top: 2px;
+}
+
+section > span.subheading {
+  span.date {
+    float: right;
+    font-style: italic;
+  }
+}
+
+section:not(.summary) > :not(.subheading, h2) {
+  padding-left: 20px;
+}
+
+ul {
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ul.thick > li:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+ul.thick p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p + ul {
+  margin-top: -1em;
+}
+
+p + p {
+  margin-top: -0.6em;
+}
+
+.subheading + p, .subheading + div > p:first-of-type {
+  margin-top: 0;
+}
+
+span.skill {
+  font-weight: bold;
+}
+
+.download {
+  display: block;
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  backdrop-filter: blur(1px);
+  border-bottom-left-radius: 12px;
+  padding: 6px;
+  background-color:rgba(32, 255, 32, 0.1);
+  border-left: solid 2px rgb(32, 255, 32);
+  border-bottom: solid 2px rgb(32, 255, 32);
+
+  transition: scale 0.1s ease-in-out;
+  transform-origin: top right;
+  scale: 1;
+}
+
+.download:hover {
+  scale: 1.1;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+

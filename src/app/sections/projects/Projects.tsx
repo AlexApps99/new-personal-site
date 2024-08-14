@@ -83,12 +83,12 @@ export default function Projects(projects: Project[]): Section {
         <ul className="">
           {projects.map((project) => (
             <li key={project.title} className="">
-              <figure className="m-4 p-2 border-slate-700 bg-slate-600 bg-opacity-20 backdrop-blur-sm border rounded shadow-inner shadow-slate-900/50 block">
+              <figure className="m-4 p-2 border-slate-700 bg-slate-600 bg-opacity-20 backdrop-blur-sm border-2 rounded-lg shadow-inner shadow-slate-900/50 block">
                 <figcaption className="font-bold text-xl flex justify-between">
                   <span className="block">
                   {
                   (project.url) ?
-                     <a href={project.url} target="_blank" className="glow-hover">{project.title}&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare}></FontAwesomeIcon></a>
+                     <a href={project.url} target="_blank" className="glow-hover group">{project.title}&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="group-hover:[transform:scale(1.25)] transition-transform" /></a>
                   :
                     project.title
                   }
@@ -107,7 +107,7 @@ export default function Projects(projects: Project[]): Section {
                 <ul className="flex flex-wrap">
                   {project.tech.map((tech) => (
                     <li key={tech} className="m-1 rounded-full px-2 shadow-lg text-sm" style={{"backgroundColor": TECH_CATEGORY_COLOURS[TECHS[tech].category].bg, "color": TECH_CATEGORY_COLOURS[TECHS[tech].category].fg}}>
-                      <span className="pr-1"><FontAwesomeIcon icon={TECHS[tech].icon}></FontAwesomeIcon></span>
+                      <span className="pr-1"><FontAwesomeIcon icon={TECHS[tech].icon} /></span>
                       <span>{TECHS[tech].name}</span>
                     </li>
                   ))}

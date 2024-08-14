@@ -1,15 +1,26 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { Inter, Michroma } from "next/font/google";
+import { DM_Sans, Inter, Michroma } from "next/font/google";
 import { Project } from "./sections/projects/Projects";
 
 export const HEADING_FONT = Michroma({ weight: "400", subsets: ["latin"] });
 
-export const TEXT_FONT = Inter({ weight: ["400", "700"], subsets: ["latin"] });
+// export const TEXT_FONT = Inter({ weight: ["400", "700"], subsets: ["latin"] });
+export const TEXT_FONT = DM_Sans({ weight: ["400", "700"], subsets: ["latin"] });
+
+export const BASE_URL: string = "https://alexbrown.nz";
 
 export const NAME: string = "Alex Brown";
 
 export const TAGLINE: string = "Problem solver,\nsoftware engineer,\nand student";
+
+export const PAGE_TITLE: string = "Alex Brown";
+
+export const EXTERNAL_PAGE_TITLE: string = "Alex Brown's personal site";
+
+export const EXTERNAL_PAGE_DESCRIPTION: string = "A driven Part II Software Engineering student at UoA, with a keen interest in solving hard problems.";
+
+export const KEYWORDS: string[] = ["Alex Brown", "software engineer", "embedded", "resume", "university"];
 
 export const SOCIALS: {
   name: string;
@@ -71,7 +82,7 @@ the firmware on the satellite's hardware.`,
   {
     title: "APSS Pico-SAT 2024",
     description: `This was a fun diversion from my work at APSS - we designed and built small model \"satellites\" to launch \
-at the NZ Rocketry Association's 2024 launch event. I designed the satellite's PCB, integrating an MSP430 microcontroller, \
+at the NZ Rocketry Association's 2024 launch event. I designed the satellite's PCB in KiCAD, integrating an MSP430 microcontroller, \
 and wrote the firmware in C++. The satellite recorded barometric telemetry data during its flight, reaching a peak height of 900 meters. \
 The hardest part of the project was searching for the satellite after it landed in a field.`,
     yearFrom: 2024,
@@ -80,11 +91,13 @@ The hardest part of the project was searching for the satellite after it landed 
   },
   {
     title: "Portfolio site, Résumé",
-    description: `You're looking at it! I built this site using Next.js, TypeScript, and Tailwind CSS.`,
+    description: `You're looking at it! I built this site using Next.js, TypeScript, and Tailwind CSS. \
+Most of my time spent on this project was spent on design, so hopefully it looks nice!`,
     yearFrom: 2024,
     yearTo: 2024,
     tech: ["js", "react"]
   },
+  /*
   {
     title: "NZ Cyber Security Competition 2024",
     description: WALTER_WHITE,
@@ -100,21 +113,21 @@ The hardest part of the project was searching for the satellite after it landed 
     tech: ["rust", "js"]
   },
   {
-    title: "Postgres DB migration",
+    title: "Postgres DB migration (ComplyPro)",
     description: WALTER_WHITE,
     yearFrom: 2024,
     yearTo: 2024,
     tech: ["js", "sql", "aws", "express", "git", "jira"]
   },
   {
-    title: "Mobile MFA login",
+    title: "Mobile MFA login (ComplyPro)",
     description: WALTER_WHITE,
     yearFrom: 2023,
     yearTo: 2023,
     tech: ["js", "ionic", "angular", "firebase", "git", "jira"]
   },
   {
-    title: "Bluetooth temperature probe support",
+    title: "Bluetooth temperature probe support (ComplyPro)",
     description: WALTER_WHITE,
     yearFrom: 2023,
     yearTo: 2023,
@@ -159,6 +172,7 @@ The hardest part of the project was searching for the satellite after it landed 
     yearTo: 2022,
     tech: ["c", "python", "bash"]
   },
+  */
   {
     title: "Other?",
     description: "See my GitHub for more projects - there are lots of shorter projects and experiments that I haven't listed here.",
