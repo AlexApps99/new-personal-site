@@ -24,7 +24,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#3676C9',
+  themeColor: [
+    {
+      color: '#3676C9',
+      media: '(prefers-color-scheme: light)'
+    },
+    {
+      color: '#1F2937',
+      media: '(prefers-color-scheme: dark)'
+    }
+  ],
+  colorScheme: 'dark'
 };
 
 export default function RootLayout({
@@ -33,8 +43,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={TEXT_FONT.className + ' ' + styles.noiseBackground}>{children}</body>
+    <html lang="en-NZ" className={`scroll-smooth ${TEXT_FONT.className} ${styles.noiseBackground}`}>
+      <body>{children}</body>
     </html>
   );
 }

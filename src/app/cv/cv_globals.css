@@ -11,6 +11,7 @@ html {
     url("./tile_circuit.png") top/auto 80px repeat-x !important;
 
   color: black !important;
+  color-scheme: normal !important;
 }
 
 /* Smaller font size on small devices */
@@ -24,9 +25,6 @@ html > body {
   margin-top: 7mm;
   margin-left: 13mm;
   margin-right: 13mm;
-
-  background: none !important;
-  color: inherit !important;
 }
 
 @media screen {

@@ -29,7 +29,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#32CD32',
+  themeColor: [
+    {
+      color: '#32CD32',
+      media: '(prefers-color-scheme: light)'
+    },
+    {
+      color: '#228B22',
+      media: '(prefers-color-scheme: dark)'
+    }
+  ],
+  colorScheme: 'dark'
 };
 
 const CONTACT_DATA: { icon: IconDefinition, data: JSX.Element }[] = [
