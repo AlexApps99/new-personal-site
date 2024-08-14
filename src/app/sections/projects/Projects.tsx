@@ -79,7 +79,6 @@ export default function Projects(projects: Project[]): Section {
     name: "Projects",
     element: (
       <>
-        <h2 className={`text-2xl ${HEADING_FONT.className} !font-bold`}>Projects</h2>
         <ul className="">
           {projects.map((project) => (
             <li key={project.title} className="">
