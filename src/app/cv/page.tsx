@@ -5,6 +5,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGithub, faLinkedin, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import ObfuscatedLink from "./obfuscated_link";
 import { NAME } from "../config";
+import styles from "./cv.module.css";
 
 const PAGE_TITLE = "Alex Brown - CV";
 const EXTERNAL_PAGE_TITLE = "Alex Brown - CV";
@@ -28,27 +29,27 @@ export const viewport: Viewport = {
 const CONTACT_DATA: { icon: IconDefinition, data: JSX.Element }[] = [
   {
     icon: faLocationDot,
-    data: <address>Auckland, NZ</address>,
+    data: <>Auckland, NZ</>,
   },
   {
     icon: faGlobe,
-    data: <address><a href="https://alexbrown.nz/">alexbrown.nz</a></address>,
+    data: <a className="text-green-600" href="https://alexbrown.nz/">alexbrown.nz</a>,
   },
   {
     icon: faPhone,
-    data: <address><ObfuscatedLink className="nostyle" target="_blank" text="gMzITNgEjMwACNwIDI0YzK" href={(text: string) => "tel:" + text.replaceAll(" ", "-")} placeholder="+64 000 000 0000" /></address>,
+    data: <ObfuscatedLink target="_blank" text="gMzITNgEjMwACNwIDI0YzK" href={(text: string) => "tel:" + text.replaceAll(" ", "-")} placeholder="+64 000 000 0000" />,
   },
   {
     icon: faLinkedin,
-    data: <address><a href="https://www.linkedin.com/in/alex-b-nz/" target="_blank">alex-b-nz</a></address>,
+    data: <a className="text-green-600" href="https://www.linkedin.com/in/alex-b-nz/" target="_blank">alex-b-nz</a>,
   },
   {
     icon: faGithub,
-    data: <address><a href="https://github.com/AlexApps99" target="_blank">AlexApps99</a></address>,
+    data: <a className="text-green-600" href="https://github.com/AlexApps99" target="_blank">AlexApps99</a>,
   },
   {
     icon: faEnvelope,
-    data: <address><ObfuscatedLink target="_blank" text="t92YuwWah12ZAlTOzBHch5CelxWY" href={(text: string) => "mailto:" + text} placeholder="enable.js@example.org" /></address>,
+    data: <ObfuscatedLink className="text-green-600" target="_blank" text="t92YuwWah12ZAlTOzBHch5CelxWY" href={(text: string) => "mailto:" + text} placeholder="enable.js@example.org" />,
   }
 ];
 
@@ -59,6 +60,10 @@ const SUMMARY: JSX.Element = <p>
   I am looking for a challenging role where I can grow my skills and make a difference.
 </p>;
 
+function skill(text: string): JSX.Element {
+  return <span className="font-bold">{text}</span>;
+}
+
 const SECTIONS: {
   icon: IconDefinition,
   title: string,
@@ -68,27 +73,27 @@ const SECTIONS: {
     icon: faGraduationCap,
     title: "Education",
     content: <>
-      <span className="subheading"><span><b>University of Auckland - Bachelor of Engineering (Honours)</b> - 9.00/9.00 GPA</span> <span className="date">2023 - 2026</span></span>
-      <ul className="thick">
+      <span className="!pl-0"><span><b>University of Auckland - Bachelor of Engineering (Honours)</b> - 9.00/9.00 GPA</span> <span className="float-right italic">2023 - 2026</span></span>
+      <ul className={styles.thick}>
         <li>
           <span><b>Software Engineering Class Representative</b> (2024)</span>
           <p>
             Advocating for 300 students across 4 courses,
-            <span className="skill">resolving issues</span> through communication.
+            {skill('resolving issues')} through communication.
           </p>
         </li>
         <li>
           <span><b>Teaching Assistant - ENGGEN 115</b> (2024)</span>
           <p>
             Voluntarily answered student Q&A in 2023, which led to a paid TA role in 2024.<br/>
-            <span className="skill">Helping</span> dozens of students every day, facilitating weekly staff <span className="skill">debriefs</span>.
+            {skill('Helping')} dozens of students every day, facilitating weekly staff {skill('debriefs')}.
           </p>
         </li>
         <li>
-          <span><b><a href="https://www.auckland.ac.nz/en/science/study-with-us/science-scholars-programme.html" target="_blank">Science Scholars</a></b> (2023)</span>
+          <span><b><a className="text-green-600" href="https://www.auckland.ac.nz/en/science/study-with-us/science-scholars-programme.html" target="_blank">Science Scholars</a></b> (2023)</span>
           <p>
             Engaged in various scientific discussions with professors and peers,<br/>
-            developed <span className="skill">scientific writing and research</span> skills with an <a href="https://sciencescholarsuoa.wixsite.com/science-scholars-23/post/leaky-abstractions" target="_blank">article analyzing recent CPU flaws</a>.
+            developed {skill('scientific writing and research')} skills with an <a className="text-green-600" href="https://sciencescholarsuoa.wixsite.com/science-scholars-23/post/leaky-abstractions" target="_blank">article analyzing recent CPU flaws</a>.
           </p>
         </li>
       </ul>
@@ -98,40 +103,40 @@ const SECTIONS: {
     icon: faBriefcase,
     title: "Industry experience",
     content: <>
-      <span className="subheading"><span><b><a href="https://www.complypro.io/" target="_blank">Comply Pro</a>, Auckland - Software Engineer (intern)</b></span> <span className="date">2022 - present</span></span>
+      <span className="!pl-0"><span><b><a className="text-green-600" href="https://www.complypro.io/" target="_blank">Comply Pro</a>, Auckland - Software Engineer (intern)</b></span> <span className="float-right italic">2022 - present</span></span>
       <div>
         <p>
-          Filling many roles across their codebases, including backend (<span className="skill">node.js + SQL</span>),<br/>
-          Web/Mobile (<span className="skill">Angular + Ionic + TypeScript</span>), and internal tooling (<span className="skill">Vue</span>, <span className="skill">node.js + SQL</span>).<br/>
-          Managing simultaneous feature <span className="skill">branches</span> in <span className="skill">Git</span>, performing regular <span className="skill">PR code reviews</span>.
+          Filling many roles across their codebases, including backend ({skill('node.js + SQL')}),<br/>
+          Web/Mobile ({skill('Angular + Ionic + TypeScript')}), and internal tooling ({skill('Vue')}, {skill('node.js + SQL')}).<br/>
+          Managing simultaneous feature {skill('branches')} in {skill('Git')}, performing regular {skill('PR code reviews')}.
         </p><p>
           <b>Key achievements:</b>
         </p>
-        <ul className="thick">
+        <ul className={styles.thick}>
           <li>
-            Rewrote the <a href="https://www.safefoodpro.com/features/bluetooth-probe-integration" target="_blank">temperature probe UI</a> using <span className="skill">Web Bluetooth APIs</span>, by <span className="skill">reverse-engineering</span> the DishTemp protocol with <span className="skill">WireShark</span>.
+            Rewrote the <a className="text-green-600" href="https://www.safefoodpro.com/features/bluetooth-probe-integration" target="_blank">temperature probe UI</a> using {skill('Web Bluetooth APIs')}, by {skill('reverse-engineering')} the DishTemp protocol with {skill('WireShark')}.
             Used by thousands of customers every day.
           </li>
           <li>
-            Added <span className="skill">2FA</span> to our Web apps using <span className="skill">Firebase Authentication</span>.<br/>
-            <span className="skill">Improved security practices</span> internally, and for several large clients.
+            Added {skill('2FA')} to our Web apps using {skill('Firebase Authentication')}.<br/>
+            {skill('Improved security practices')} internally, and for several large clients.
           </li>
           <li>
-            Rewrote <span className="skill">MS-SQL</span> server code and stored procedures for <span className="skill">PostgreSQL</span> migration.
-            Changes reached every corner of the codebase, requiring a comprehensive <span className="skill">regression test suite</span>.<br/>
+            Rewrote {skill('MS-SQL')} server code and stored procedures for {skill('PostgreSQL')} migration.
+            Changes reached every corner of the codebase, requiring a comprehensive {skill('regression test suite')}.<br/>
             Significantly cuts hosting costs, enabling product expansion into Canada.
           </li>
           <li>
-            Spearheaded the <span className="skill">backend</span> of approval and permit workflows,
-            a <a href="https://www.siteapppro.com/ca/workflows-and-approvals" target="_blank">&quot;killer feature&quot;</a> for Site App Pro that has attracted large international clients.<br/>
+            Spearheaded the {skill('backend')} of approval and permit workflows,
+            a <a className="text-green-600" href="https://www.siteapppro.com/ca/workflows-and-approvals" target="_blank">&quot;killer feature&quot;</a> for Site App Pro that has attracted large international clients.<br/>
           </li>
         </ul>
       </div>
       {/* TODO Add bullet points of transferrable skills, and consider removing the first summary */}
-      <span className="subheading"><span><b><a href="https://www.exploregroup.co.nz/" target="_blank">Explore Group</a>, Bay of Islands - Ferry crew, restaurant staff</b></span> <span className="date">2021 - 2022</span></span>
+      <span className="!pl-0"><span><b><a className="text-green-600" href="https://www.exploregroup.co.nz/" target="_blank">Explore Group</a>, Bay of Islands - Ferry crew, restaurant staff</b></span> <span className="float-right italic">2021 - 2022</span></span>
       <p>
-        Being a deckhand demanded <span className="skill">situational awareness</span>, <span className="skill">teamwork</span>, and clear <span className="skill">communication</span> with the skipper.
-        As a kitchenhand, I learned the importance of <span className="skill">positive interactions</span> with customers, <span className="skill">handling complaints</span> effectively, and <span className="skill">working quickly under pressure</span>.
+        Being a deckhand demanded {skill('situational awareness')}, {skill('teamwork')}, and clear {skill('communication')} with the skipper.
+        As a kitchenhand, I learned the importance of {skill('positive interactions')} with customers, {skill('handling complaints')} effectively, and {skill('working quickly under pressure')}.
       </p>
     </>
 
@@ -140,25 +145,25 @@ const SECTIONS: {
     icon: faUsers,
     title: "Club projects",
     content: <>
-      <span className="subheading"><span><b>Auckland Program for Space Systems</b></span> <span className="date">2023 - present</span></span>
+      <span className="!pl-0"><span><b>Auckland Program for Space Systems</b></span> <span className="float-right italic">2023 - present</span></span>
       <p>
-        <span className="skill">Leading a satellite design team</span> that won the APSS Mission Proposal Competition 2023.<br/>
-        Currently working on the upcoming &quot;Kessler&quot; satellite&apos;s <span className="skill">C++</span>/<span className="skill">FreeRTOS</span>-based firmware,
-        by coordinating with a team, balancing strict <span className="skill">hardware requirements</span> and <span className="skill">tight deadlines</span>.
+        {skill('Leading a satellite design team')} that won the APSS Mission Proposal Competition 2023.<br/>
+        Currently working on the upcoming &quot;Kessler&quot; satellite&apos;s {skill('C++')}/{skill('FreeRTOS')}-based firmware,
+        by coordinating with a team, balancing strict {skill('hardware requirements')} and {skill('tight deadlines')}.
       </p>
-      <span className="subheading"><span><b>UoA Game Developers Guild</b></span> <span className="date">2023 - present</span></span>
+      <span className="!pl-0"><span><b>UoA Game Developers Guild</b></span> <span className="float-right italic">2023 - present</span></span>
       <p>
         Passionate about Game development since high school.
-        Formed a team at GDG, honed <span className="skill">project management</span> and <span className="skill">team communication</span>.
-        Released 3 games in 2023, <a href="https://xnopytagameing.itch.io/annihilation-inc" target="_blank">one with 700+ plays</a>.
-        Experienced in Unity 3D (<span className="skill">C#</span>), Godot, and <span className="skill">OpenGL</span> programming (<span className="skill">Rust</span>/<span className="skill">C++</span>).
+        Formed a team at GDG, honed {skill('project management')} and {skill('team communication')}.
+        Released 3 games in 2023, <a className="text-green-600" href="https://xnopytagameing.itch.io/annihilation-inc" target="_blank">one with 700+ plays</a>.
+        Experienced in Unity 3D ({skill('C#')}), Godot, and {skill('OpenGL')} programming ({skill('Rust')}/{skill('C++')}).
       </p>
     </>
   },
   {
     icon: faAward,
     title: "Achievements",
-    content: <ul className="thick">
+    content: <ul className={styles.thick}>
       <li>
         <span><b>UoA Dean&apos;s Honours list</b> - top 5% in Part 1 Engineering (2023)</span>
       </li>
@@ -166,7 +171,7 @@ const SECTIONS: {
         <span><b>ENGGEN 115 - First in class award</b> (2023)</span>
       </li>
       <li>
-        <span><b>UoA <a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-mathematics/study-mathematics/max.html" target="_blank">MAX program</a> - First in class award</b> (2022)</span>
+        <span><b>UoA <a className="text-green-600" href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-mathematics/study-mathematics/max.html" target="_blank">MAX program</a> - First in class award</b> (2022)</span>
       </li>
       <li>
         <span><b>UoA Top Achiever Scholarship</b> (2022)</span>
@@ -175,7 +180,7 @@ const SECTIONS: {
         <span><b>NCEA Scholarship in Calculus, Statistics</b> (2022)</span>
       </li>
       <li>
-        <span><b>UoA <a href="https://www.auckland.ac.nz/en/engineering/about-the-faculty/engineering-science/new-zealand-engineering-science-competition/previous-winners.html#:~:text=Team%20122" target="_blank">NZ Engineering Science Competition</a></b> - Runners up, $2000 prize (2021)</span>
+        <span><b>UoA <a className="text-green-600" href="https://www.auckland.ac.nz/en/engineering/about-the-faculty/engineering-science/new-zealand-engineering-science-competition/previous-winners.html#:~:text=Team%20122" target="_blank">NZ Engineering Science Competition</a></b> - Runners up, $2000 prize (2021)</span>
       </li>
     </ul>
   },
@@ -184,17 +189,17 @@ const SECTIONS: {
   {
     icon: faMicrochip,
     title: "Technical skills",
-    content: <ul className="thick">
+    content: <ul className={styles.thick}>
       <li>
         <b>Linux</b>:
         Linux has been my primary OS since 2016, so I&apos;m highly experienced in
-        writing <span className="skill">shell scripts</span> and interfacing with the <span className="skill">Linux ecosystem</span>, <span className="skill">GCC/Clang</span>, <span className="skill">CMake</span>, and other tools.
+        writing {skill('shell scripts')} and interfacing with the {skill('Linux ecosystem')}, {skill('GCC/Clang')}, {skill('CMake')}, and other tools.
       </li>
       <li>
         <b>Embedded</b>:
-        I have made projects with <span className="skill">Arduino</span>, <span className="skill">NodeMCU</span> (ESP8266),
-        <span className="skill">Raspberry Pi</span>, <span className="skill">RP2040</span>, and <span className="skill">MSP430</span>, using SPI/I<sup>2</sup>C/UART protocols.
-        I also have experience designing <span className="skill">PCBs</span> in KiCAD.
+        I have made projects with {skill('Arduino')}, {skill('NodeMCU')} (ESP8266),
+        {skill('Raspberry Pi')}, {skill('RP2040')}, and {skill('MSP430')}, using SPI/I<sup>2</sup>C/UART protocols.
+        I also have experience designing {skill('PCBs')} in KiCAD.
       </li>
       {/* <li>
         <b>Other</b>:
@@ -206,21 +211,21 @@ const SECTIONS: {
   {
     icon: faFlask,
     title: "Personal projects",
-    content: <ul className="thick">
+    content: <ul className={styles.thick}>
       <li>
-        <b><a href="https://github.com/AlexApps99/SparkMemes" target="_blank">SparkMemes</a></b>: An automated <a href="https://www.youtube.com/@SparkMemes" target="_blank">YouTube channel</a> with over 4000 entertaining videos generated without human interaction. (<span className="skill">Python</span>, <span className="skill">REST APIs</span>, <span className="skill">Tkinter</span>)
+        <b><a className="text-green-600" href="https://github.com/AlexApps99/SparkMemes" target="_blank">SparkMemes</a></b>: An automated <a className="text-green-600" href="https://www.youtube.com/@SparkMemes" target="_blank">YouTube channel</a> with over 4000 entertaining videos generated without human interaction. ({skill('Python')}, {skill('REST APIs')}, {skill('Tkinter')})
       </li>
       <li>
-        <b><a href="https://github.com/AlexApps99/badapple_encoder" target="_blank"><i>Bad Apple!!</i> video playback on CASIO FX9860GII</a></b>: A custom video codec, with a <span className="skill">Python</span> encoder and a <span className="skill">C</span> decoder. The video is 20x smaller when compressed, and fits on the calculator.
+        <b><a className="text-green-600" href="https://github.com/AlexApps99/badapple_encoder" target="_blank"><i>Bad Apple!!</i> video playback on CASIO FX9860GII</a></b>: A custom video codec, with a {skill('Python')} encoder and a {skill('C')} decoder. The video is 20x smaller when compressed, and fits on the calculator.
       </li>
       <li>
-        <b>FFToMIDI</b>: A <span className="skill">Python</span>/<span className="skill">numpy</span> project that converts audio into Piano notes using the <span className="skill">Fast Fourier Transform</span>. You can still understand human speech encoded through thousands of Piano notes!
+        <b>FFToMIDI</b>: A {skill('Python')}/{skill('numpy')} project that converts audio into Piano notes using the {skill('Fast Fourier Transform')}. You can still understand human speech encoded through thousands of Piano notes!
       </li>
       <li>
-        <b><a href="https://github.com/ZoussCity/stardome" target="_blank">Space visualisation</a></b>: A program in <span className="skill">Rust</span> to accurately visualise the Earth-Moon system, rendering with <span className="skill">OpenGL</span> and generating ephemerides with NASA&apos;s SPICE toolkit.
+        <b><a className="text-green-600" href="https://github.com/ZoussCity/stardome" target="_blank">Space visualisation</a></b>: A program in {skill('Rust')} to accurately visualise the Earth-Moon system, rendering with {skill('OpenGL')} and generating ephemerides with NASA&apos;s SPICE toolkit.
       </li>
       <li>
-        <b>GameBoy VHDL recreation</b>: An <span className="skill">FPGA</span> project to recreate the Nintendo GameBoy in <span className="skill">VHDL</span>, including Z80-based <span className="skill">CPU design</span>, and an SDRAM-backed PPU, for the <span className="skill">DE0-CV</span> board.<br/>
+        <b>GameBoy VHDL recreation</b>: An {skill('FPGA')} project to recreate the Nintendo GameBoy in {skill('VHDL')}, including Z80-based {skill('CPU design')}, and an SDRAM-backed PPU, for the {skill('DE0-CV')} board.<br/>
       </li>
       <li>
         <b>Other</b>: I&apos;ve written emulators, physics simulations, scrapers, websites, Pi-crunchers, raymarchers, and more.
@@ -231,7 +236,7 @@ const SECTIONS: {
   {
     icon: faHeart,
     title: "Interests",
-    content: <ul className="thick">
+    content: <ul className={styles.thick}>
       <li>
         <b>Hiking and Kayaking</b>:
         I love wandering through NZ&apos;s beautiful outdoors, and the sense of freedom it brings.
@@ -261,18 +266,20 @@ export default function Cv() {
   return (<>
 
     {/* TODO change the link when the PDF changes */}
-    <a className="download no-print" href="/cv/cv-2024-04.pdf" target="_blank" type="application/pdf" download="Alex Brown - CV.pdf">Download CV <FontAwesomeIcon icon={faFileArrowDown} /></a>
+    <a className={"text-green-600 text-2xl print:!hidden " + styles.download} href="/cv/cv-2024-04.pdf" target="_blank" type="application/pdf" download="Alex Brown - CV.pdf">Download CV <FontAwesomeIcon icon={faFileArrowDown} /></a>
 
     <header>
-      <div className="heading">
-        <h1 className="title">{NAME}</h1>
-        <h2 className="subtitle">Part&nbsp;II Software&nbsp;Engineer @ University&nbsp;of&nbsp;Auckland</h2>
+      <div className="flex justify-between items-baseline">
+        <h1 className="my-0 text-4xl font-bold">{NAME}</h1>
+        <h2 className="my-0 italic text-right text-lg font-bold">Part&nbsp;II Software&nbsp;Engineer @ University&nbsp;of&nbsp;Auckland</h2>
       </div>
-      <ul className="contacts">
+      <ul className="p-0 m-0 pt-2 grid justify-between grid-cols-[repeat(2,auto)] sm:grid-cols-[repeat(3,auto)]">
         {CONTACT_DATA.map(({ icon, data }) => (
-          <li key={icon.iconName}>
+          <li key={icon.iconName} className="block whitespace-nowrap">
             <FontAwesomeIcon icon={icon} />
-            {data}
+            <address className="inline not-italic pl-2">
+              {data}
+            </address>
           </li>
         ))}
       </ul>
@@ -280,12 +287,12 @@ export default function Cv() {
 
     <main>
 
-      <section className="summary">{SUMMARY}</section>
+      <section className="print:break-inside-avoid">{SUMMARY}</section>
 
       {
         SECTIONS.map(({ icon, title, content }) => (
-          <section key={title}>
-            <h2><FontAwesomeIcon icon={icon} /> {title}</h2>
+          <section key={title} className={'print:break-inside-avoid ' + styles.indentedSummary}>
+            <h2 className="rounded-full !pl-2 text-lg bg-gradient-to-t from-[rgba(32,255,32,1.0)] to-[rgba(32,255,32,0.25)] font-bold"><FontAwesomeIcon icon={icon} /> {title}</h2>
             {content}
           </section>
         ))

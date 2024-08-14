@@ -1,0 +1,24 @@
+.download {
+  @apply block absolute top-0 right-0;
+  @apply p-2;
+  @apply backdrop-blur-[1px];
+  @apply rounded-bl-xl;
+  @apply bg-green-500/10;
+  @apply border-l-2 border-b-2 border-green-400;
+
+  @apply origin-top-right transition-transform hover:scale-110;
+}
+
+ul.thick {
+  @apply list-disc pl-5 my-1;
+}
+
+ul.thick > li:not(:last-of-type) {
+  @apply mb-1;
+}
+
+.indentedSummary > * {
+  /* why not margin? */
+  /* subheadings and h2 override this with !pl-0, !pl-2 */
+  @apply pl-5;
+}
