@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import styles from "./home.module.css";
-import { BASE_URL, EXTERNAL_PAGE_DESCRIPTION, EXTERNAL_PAGE_TITLE, KEYWORDS, NAME, PAGE_TITLE, TEXT_FONT } from "./config";
+import { BASE_URL, EXTERNAL_PAGE_DESCRIPTION, KEYWORDS, NAME, OPENGRAPH, PAGE_TITLE, TEXT_FONT, TWITTER } from "./config";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 export const metadata: Metadata = {
@@ -11,20 +11,8 @@ export const metadata: Metadata = {
   keywords: KEYWORDS,
   authors: [{ name: NAME }],
   metadataBase: new URL(BASE_URL),
-  openGraph: {
-    // should be overriden by each page
-    title: EXTERNAL_PAGE_TITLE,
-    description: EXTERNAL_PAGE_DESCRIPTION,
-    url: "./",
-    locale: 'en_NZ',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    // should be overriden by each page
-    title: EXTERNAL_PAGE_TITLE,
-    description: EXTERNAL_PAGE_DESCRIPTION,
-  },
+  openGraph: OPENGRAPH,
+  twitter: TWITTER,
   alternates: {
     canonical: "./",
     types: {
@@ -36,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0F172A',
+  themeColor: '#3676C9',
 };
 
 export default function RootLayout({

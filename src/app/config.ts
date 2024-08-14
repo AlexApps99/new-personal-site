@@ -2,6 +2,8 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { DM_Sans, Inter, Michroma } from "next/font/google";
 import { Project } from "./sections/projects/Projects";
+import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
+import { Twitter } from "next/dist/lib/metadata/types/twitter-types";
 
 export const HEADING_FONT = Michroma({ weight: "400", subsets: ["latin"] });
 
@@ -21,6 +23,22 @@ export const EXTERNAL_PAGE_TITLE: string = "Alex Brown's personal site";
 export const EXTERNAL_PAGE_DESCRIPTION: string = "A driven Part II Software Engineering student at UoA, with a keen interest in solving hard problems.";
 
 export const KEYWORDS: string[] = ["Alex Brown", "software engineer", "embedded", "resume", "university"];
+
+export const OPENGRAPH: OpenGraph = {
+  // should be overriden by each page
+  title: EXTERNAL_PAGE_TITLE,
+  description: EXTERNAL_PAGE_DESCRIPTION,
+  url: "./",
+  locale: 'en_NZ',
+  type: 'website',
+};
+
+export const TWITTER: Twitter = {
+  card: 'summary',
+  // should be overriden by each page
+  title: EXTERNAL_PAGE_TITLE,
+  description: EXTERNAL_PAGE_DESCRIPTION,
+};
 
 export const SOCIALS: {
   name: string;

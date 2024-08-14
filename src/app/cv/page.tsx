@@ -4,7 +4,7 @@ import { faAward, faBriefcase, faFileArrowDown, faFlask, faGlobe, faGraduationCa
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGithub, faLinkedin, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import ObfuscatedLink from "./obfuscated_link";
-import { NAME } from "../config";
+import { NAME, OPENGRAPH, TWITTER } from "../config";
 import styles from "./cv.module.css";
 
 const PAGE_TITLE = "Alex Brown - CV";
@@ -15,11 +15,17 @@ export const metadata: Metadata = {
   title: PAGE_TITLE,
   openGraph: {
     title: EXTERNAL_PAGE_TITLE,
+    ...OPENGRAPH
   },
   twitter: {
     // should be overriden by each page
     title: EXTERNAL_PAGE_TITLE,
+    ...TWITTER
   },
+  robots: {
+    index: false,
+    follow: false,
+  }
 };
 
 export const viewport: Viewport = {
