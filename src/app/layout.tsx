@@ -25,9 +25,6 @@ export const metadata: Metadata = {
     title: EXTERNAL_PAGE_TITLE,
     description: EXTERNAL_PAGE_DESCRIPTION,
   },
-  verification: {
-    //google: 'TODO',
-  },
   alternates: {
     canonical: "./",
     types: {
