@@ -2,9 +2,9 @@
   @apply block absolute top-0 right-0;
   @apply p-1;
   @apply pr-3;
-  @apply backdrop-blur-[1px];
+  /* @apply backdrop-blur-[1px]; */
   @apply rounded-bl-xl;
-  @apply bg-green-500/10;
+  @apply bg-green-200/75;
   @apply border-l-2 border-b-2 border-green-400;
 
   @apply origin-top-right transition-transform hover:scale-110;

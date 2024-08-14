@@ -83,7 +83,7 @@ export default function Projects(projects: Project[]): Section {
         <ul className="">
           {projects.map((project) => (
             <li key={project.title} className="">
-              <figure className="m-4 p-2 border-slate-700 bg-slate-600 bg-opacity-20 backdrop-blur-sm border-2 rounded-lg shadow-inner shadow-slate-900/50 block">
+              <figure className="m-4 p-2 border-slate-700 bg-slate-700 bg-opacity-50 border-2 rounded-lg shadow-inner shadow-slate-900/50 block">
                 <figcaption className="font-bold text-xl flex justify-between">
                   <span className="block">
                   {
