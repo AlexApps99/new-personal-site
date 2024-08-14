@@ -70,6 +70,15 @@ function skill(text: string): JSX.Element {
   return <span className="font-bold">{text}</span>;
 }
 
+function subheading(title: string, detail?: string | null, info?: string | null, dates?: string, href?: string): JSX.Element {
+  return <span className="!pl-0 mt-2 block"><span>{
+    href ?
+      <b><a className="text-green-600" href={href} target="_blank">{title}</a>{detail ? ` - ${detail}` : null}</b>
+    :
+      <b>{title}{detail ? ` - ${detail}` : null}</b>
+    }{info ? ' - ' + info : ''}</span> {dates ? <span className="float-right italic">{dates}</span> : undefined}</span>;
+}
+
 const SECTIONS: {
   icon: IconDefinition,
   title: string,
@@ -79,7 +88,7 @@ const SECTIONS: {
     icon: faGraduationCap,
     title: "Education",
     content: <>
-      <span className="!pl-0"><span><b>University of Auckland - Bachelor of Engineering (Honours)</b> - 9.00/9.00 GPA</span> <span className="float-right italic">2023 - 2026</span></span>
+      {subheading("University of Auckland", "Bachelor of Engineering (Honours)", "9.00/9.00 GPA", "2023 - 2026")}
       <ul className={styles.thick}>
         <li>
           <span><b>Software Engineering Class Representative</b> (2024)</span>
@@ -109,13 +118,13 @@ const SECTIONS: {
     icon: faBriefcase,
     title: "Industry experience",
     content: <>
-      <span className="!pl-0"><span><b><a className="text-green-600" href="https://www.complypro.io/" target="_blank">Comply Pro</a>, Auckland - Software Engineer (intern)</b></span> <span className="float-right italic">2022 - present</span></span>
+      {subheading("Comply Pro, Auckland", "Software Engineer (intern)", null, "2022 - present", "https://www.complypro.io/")}
       <div>
         <p>
           Filling many roles across their codebases, including backend ({skill('node.js + SQL')}),<br/>
           Web/Mobile ({skill('Angular + Ionic + TypeScript')}), and internal tooling ({skill('Vue')}, {skill('node.js + SQL')}).<br/>
           Managing simultaneous feature {skill('branches')} in {skill('Git')}, performing regular {skill('PR code reviews')}.
-        </p><p>
+        </p><p className="mt-2">
           <b>Key achievements:</b>
         </p>
         <ul className={styles.thick}>
@@ -139,7 +148,7 @@ const SECTIONS: {
         </ul>
       </div>
       {/* TODO Add bullet points of transferrable skills, and consider removing the first summary */}
-      <span className="!pl-0"><span><b><a className="text-green-600" href="https://www.exploregroup.co.nz/" target="_blank">Explore Group</a>, Bay of Islands - Ferry crew, restaurant staff</b></span> <span className="float-right italic">2021 - 2022</span></span>
+      {subheading("Explore Group, Bay of Islands", "Ferry crew, restaurant staff", null, "2021 - 2022", "https://www.exploregroup.co.nz/")}
       <p>
         Being a deckhand demanded {skill('situational awareness')}, {skill('teamwork')}, and clear {skill('communication')} with the skipper.
         As a kitchenhand, I learned the importance of {skill('positive interactions')} with customers, {skill('handling complaints')} effectively, and {skill('working quickly under pressure')}.
@@ -151,13 +160,13 @@ const SECTIONS: {
     icon: faUsers,
     title: "Club projects",
     content: <>
-      <span className="!pl-0"><span><b>Auckland Program for Space Systems</b></span> <span className="float-right italic">2023 - present</span></span>
+      {subheading("Auckland Program for Space Systems", null, null, "2023 - present")}
       <p>
         {skill('Leading a satellite design team')} that won the APSS Mission Proposal Competition 2023.<br/>
         Currently working on the upcoming &quot;Kessler&quot; satellite&apos;s {skill('C++')}/{skill('FreeRTOS')}-based firmware,
         by coordinating with a team, balancing strict {skill('hardware requirements')} and {skill('tight deadlines')}.
       </p>
-      <span className="!pl-0"><span><b>UoA Game Developers Guild</b></span> <span className="float-right italic">2023 - present</span></span>
+      {subheading("UoA Game Developers Guild", null, null, "2023 - present")}
       <p>
         Passionate about Game development since high school.
         Formed a team at GDG, honed {skill('project management')} and {skill('team communication')}.
@@ -279,7 +288,7 @@ export default function Cv() {
         <h1 className="my-0 text-4xl font-bold">{NAME}</h1>
         <h2 className="my-0 italic text-right text-lg font-bold">Part&nbsp;II Software&nbsp;Engineer @ University&nbsp;of&nbsp;Auckland</h2>
       </div>
-      <ul className="p-0 m-0 pt-2 grid justify-between grid-cols-[repeat(2,auto)] sm:grid-cols-[repeat(3,auto)]">
+      <ul className="p-0 m-0 py-2 grid justify-between grid-cols-[repeat(2,auto)] sm:grid-cols-[repeat(3,auto)]">
         {CONTACT_DATA.map(({ icon, data }) => (
           <li key={icon.iconName} className="block whitespace-nowrap">
             <FontAwesomeIcon icon={icon} />
@@ -298,7 +307,7 @@ export default function Cv() {
       {
         SECTIONS.map(({ icon, title, content }) => (
           <section key={title} className={'print:break-inside-avoid ' + styles.indentedSummary}>
-            <h2 className="rounded-full !pl-2 text-lg bg-gradient-to-t from-[rgba(32,255,32,1.0)] to-[rgba(32,255,32,0.25)] font-bold"><FontAwesomeIcon icon={icon} /> {title}</h2>
+            <h2 className="rounded-full !pl-2 text-lg bg-gradient-to-t from-[rgba(32,255,32,1.0)] to-[rgba(32,255,32,0.25)] font-bold my-3"><FontAwesomeIcon icon={icon} /> {title}</h2>
             {content}
           </section>
         ))
