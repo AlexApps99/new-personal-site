@@ -1,8 +1,8 @@
 html.noiseBackground {
+  color-scheme: dark;
   color: white;
   background:
     fixed linear-gradient(to bottom right, #25F3, #0F03),
     fixed url(noise64.png) left top/512px,
     #03070A;
-  color-scheme: dark;
 }

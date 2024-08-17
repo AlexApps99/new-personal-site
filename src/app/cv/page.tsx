@@ -53,7 +53,7 @@ const CONTACT_DATA: { icon: IconDefinition, data: JSX.Element }[] = [
   },
   {
     icon: faPhone,
-    data: <ObfuscatedLink target="_blank" text="gMzITNgEjMwACNwIDI0YzK" href={(text: string) => "tel:" + text.replaceAll(" ", "-")} placeholder="+64 000 000 0000" />,
+    data: <ObfuscatedLink target="_blank" text="gMzITNgEjMwACNwIDI0YzK" href="IzMyUTLxIDMtQDMy0CN2siOsVGd" placeholder="+64 000 000 0000" />,
   },
   {
     icon: faLinkedin,
@@ -65,7 +65,7 @@ const CONTACT_DATA: { icon: IconDefinition, data: JSX.Element }[] = [
   },
   {
     icon: faEnvelope,
-    data: <ObfuscatedLink className="text-green-600" target="_blank" text="t92YuwWah12ZAlTOzBHch5CelxWY" href={(text: string) => "mailto:" + text} placeholder="enable.js@example.org" />,
+    data: <ObfuscatedLink className="text-green-600" target="_blank" text="t92YuwWah12ZAlTOzBHch5CelxWY" href="QbvNmLslWYtdGQ5kzcwBXYugXZsFmOvRHbpFWb" placeholder="loading.email@gmail.com" />,
   }
 ];
 
