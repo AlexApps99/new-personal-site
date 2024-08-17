@@ -5,6 +5,10 @@ import { Project } from "./sections/projects/Projects";
 import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
 import { Twitter } from "next/dist/lib/metadata/types/twitter-types";
 
+export const IN_DEV_MODE: boolean = process.env.NODE_ENV === "development";
+
+export const INCLUDE_PHONE_IN_RESUME: boolean = IN_DEV_MODE;
+
 // set to null to disable
 export const GOOGLE_ANALYTICS_ID: string | null = "G-MCN4KKHP88";
 

@@ -4,7 +4,7 @@ import { faAward, faBriefcase, faFileArrowDown, faFlask, faGlobe, faGraduationCa
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGithub, faLinkedin, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import ObfuscatedLink from "./obfuscated_link";
-import { NAME, OPENGRAPH, TWITTER } from "../config";
+import { INCLUDE_PHONE_IN_RESUME, NAME, OPENGRAPH, TWITTER } from "../config";
 import styles from "./cv.module.css";
 
 const PAGE_TITLE = "Alex Brown - CV";
@@ -53,7 +53,8 @@ const CONTACT_DATA: { icon: IconDefinition, data: JSX.Element }[] = [
   },
   {
     icon: faPhone,
-    data: <ObfuscatedLink target="_blank" text="gMzITNgEjMwACNwIDI0YzK" href="IzMyUTLxIDMtQDMy0CN2siOsVGd" placeholder="+64 000 000 0000" />,
+    // might not be safe to include online
+    data: INCLUDE_PHONE_IN_RESUME ? <ObfuscatedLink target="_blank" text="gMzITNgEjMwACNwIDI0YzK" href="IzMyUTLxIDMtQDMy0CN2siOsVGd" placeholder="+64 000 000 0000" /> : <i>available on request</i>
   },
   {
     icon: faLinkedin,
