@@ -3,6 +3,7 @@ import Header from "./header/Header";
 import type { Section } from "./sections/Section";
 import About from "./sections/about/About";
 import Projects from "./sections/projects/Projects";
+import Stars from "./stars";
 
 export default function Home() {
   const sections: Section[] = [
@@ -18,7 +19,7 @@ export default function Home() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row min-h-screen">
       {header}
       <main className="p-4 space-y-8 flex-grow max-w-4xl py-8 lg:py-24 mx-auto text-lg">
         {sections.map((section) => (
@@ -34,6 +35,7 @@ export default function Home() {
           </span>
         </section>
       </main>
+      <Stars />
     </div>
   );
 }
