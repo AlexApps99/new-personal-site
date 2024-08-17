@@ -1,6 +1,6 @@
-import { faAngular, faAws, faGitAlt, faJira, faNodeJs, faPython, faReact, faRust, faSquareJs, faUnity, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faAws, faGitAlt, faJira, faNodeJs, faPython, faReact, faRust, faSquareJs, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import {Section} from '../Section';
-import { faArrowUpRightFromSquare, faBolt, faDatabase, faDragon, faFire, faLaptopCode, faLayerGroup, faMicrochip, faMobileAlt, faNetworkWired, faPeopleGroup, faShapes, faShieldHalved, faTerminal, faWrench } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare, faBolt, faDatabase, faDragon, faFire, faHashtag, faLaptopCode, faLayerGroup, faMicrochip, faMobileAlt, faNetworkWired, faPeopleGroup, faRobot, faShapes, faShieldHalved, faTerminal, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HEADING_FONT } from '@/app/config';
 
@@ -41,7 +41,8 @@ export type TechnologyId =
   "sql" | "csharp" | "ghidra" |
   "wireshark" | "assembly" | "bash" |
   "linux" | "security" | "pcb" |
-  "team" | "jira" | "make";
+  "team" | "jira" | "make" |
+  "godot" | "websockets";
 
 const TECHS: { [id in TechnologyId]: Technology; } = {
   vhdl: { category: "embedded", name: "VHDL", icon: faLayerGroup },
@@ -60,7 +61,7 @@ const TECHS: { [id in TechnologyId]: Technology; } = {
   python: { category: "other", name: "Python", icon: faPython },
   opengl: { category: "game", name: "OpenGL", icon: faShapes },
   sql: { category: "web", name: "SQL", icon: faDatabase },
-  csharp: { category: "game", name: "C#", icon: faUnity },
+  csharp: { category: "game", name: "C#", icon: faHashtag },
   ghidra: { category: "hacking", name: "Ghidra (decompilation)", icon: faDragon },
   wireshark: { category: "hacking", name: "Wireshark", icon: faNetworkWired },
   assembly: { category: "hacking", name: "Assembly", icon: faMicrochip },
@@ -70,7 +71,9 @@ const TECHS: { [id in TechnologyId]: Technology; } = {
   pcb: { category: "embedded", name: "PCB Design", icon: faBolt },
   team: { category: "tools", name: "Team management", icon: faPeopleGroup },
   jira: { category: "tools", name: "Jira", icon: faJira },
-  make: { category: "tools", name: "Makefiles", icon: faWrench },
+  make: { category: "embedded", name: "Makefiles", icon: faWrench },
+  godot: { category: "game", name: "Godot", icon: faRobot },
+  websockets: { category: "web", name: "WebSockets", icon: faNetworkWired },
 };
 
 export default function Projects(projects: Project[]): Section {

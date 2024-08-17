@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faItchIo, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { DM_Sans, Inter, Michroma } from "next/font/google";
 import { Project } from "./sections/projects/Projects";
@@ -58,6 +58,11 @@ export const SOCIALS: {
     url: "https://linkedin.com/in/alex-b-nz",
     icon: faLinkedin,
   },
+  {
+    name: "Itch.io",
+    url: "https://xnopytagameing.itch.io/",
+    icon: faItchIo,
+  }
   // {
   //   name: "Feed",
   //   // TODO implement this lol
@@ -118,6 +123,32 @@ Most of my time spent on this project was spent on design, so hopefully it looks
     yearTo: 2024,
     tech: ["js", "react"]
   },
+  {
+    title: "Various Game Jam games",
+    description: `I've participated in several game jams hosted by the Game Developers Guild, as well as Kiwijam 2023 and 2024. \
+I really enjoy the short-form structure of game jams, because it allows me to take risks and experiment with new ideas. \
+One of my titles, "ring_zero", was featured alongside 10 indie games, at the "Spark Game Arena Live" event. \
+I usually work in Unity or Godot, though I try to wear many hats including writing GLSL shaders, \
+creating sound effects, and drawing pixel art. My games collectively have several thousand plays - give them a try!`,
+    yearFrom: 2023,
+    yearTo: 2024,
+    url: "https://xnopytagameing.itch.io/",
+    tech: ["csharp", "godot", "opengl", "git", "team"]
+  },
+  {
+    title: "WDCC x SESA Hackathon 2024",
+    description: `As a team of 6, we made a fun local multiplayer party game with 3 mobile clients \
+and one TV "game display". Our game won the "Most Over-Engineered" award for the event. \
+To synchronise state between the connected players, we used a WebSockets server implemented in C# \
+to communicate between clients and the server. \
+The result is a game where players can connect seamlessly and actions are reflected in real time. \
+Both codebases were automatically built and deployed with Docker on commit using GitHub Actions, \
+and reverse proxied behind NGINX.`,
+    yearFrom: 2024,
+    yearTo: 2024,
+    url: "https://space.feroxfoxxo.com/",
+    tech: ["csharp", "js", "react", "websockets", "git", "team"]
+  },
   /*
   {
     title: "NZ Cyber Security Competition 2024",
@@ -170,14 +201,6 @@ Most of my time spent on this project was spent on design, so hopefully it looks
     url: "https://www.youtube.com/@SparkMemes",
     git: "https://github.com/AlexApps99/SparkMemes",
     tech: ["python", "linux", "bash"]
-  },
-  {
-    title: "ring_zero, Annihilation Inc.",
-    description: WALTER_WHITE,
-    yearFrom: 2023,
-    yearTo: 2023,
-    url: "https://xnopytagameing.itch.io/",
-    tech: ["csharp", "opengl", "git", "team"]
   },
   {
     title: "NES Emulator",
