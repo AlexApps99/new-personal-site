@@ -44,8 +44,15 @@ class MeteorShower {
 
   timeToNextMeteor: number = 0.5;
 
-  constructor() {
+  timeOfLastTick: number | null = null;
+
+  ref: RefObject<HTMLCanvasElement>;
+
+  hasStopped: boolean = false;
+
+  constructor(ref: RefObject<HTMLCanvasElement>) {
     this.activeMeteors = [];
+    this.ref = ref;
   }
 
   genRandomMeteor(): void {
@@ -70,15 +77,15 @@ class MeteorShower {
     });
   }
 
-  initCtx(ref: RefObject<HTMLCanvasElement>): boolean {
+  initCtx(): boolean {
     // create content if none
-    if (this.ctx != null && this.ctx.canvas === ref.current) {
+    if (this.ctx != null && this.ctx.canvas === this.ref.current) {
       return true;
     } else {
-      if (ref.current == null) {
+      if (this.ref.current == null) {
         this.ctx = null;
       } else {
-        this.ctx = ref.current.getContext("2d", { alpha: true });
+        this.ctx = this.ref.current.getContext("2d", { alpha: true });
         if (this.ctx != null) {
           return true;
         }
@@ -104,8 +111,8 @@ class MeteorShower {
     }
   }
 
-  render(ref: RefObject<HTMLCanvasElement>) {
-    if (!this.initCtx(ref)) {
+  render(): void {
+    if (!this.initCtx()) {
       return;
     }
 
@@ -145,7 +152,7 @@ class MeteorShower {
     });
   }
 
-  tick(dt: number) {
+  tick(dt: number): void {
     this.activeMeteors.forEach((meteor) => {
       meteor.currentProgress += meteor.speed * dt;
     });
@@ -159,23 +166,49 @@ class MeteorShower {
     }
   }
 
+  setupUpdateLoop(): void {
+    let superThis = this;
+    function cb() {
+      if (!superThis.hasStopped) {
+        superThis.updateLoop();
+        requestAnimationFrame(cb);
+      }
+    }
+    if (!this.hasStopped) {
+      requestAnimationFrame(cb);
+    }
+  }
+
+  updateLoop(): void {
+    if (this.timeOfLastTick == null) {
+      this.timeOfLastTick = Date.now();
+      this.render();
+    } else {
+      let timeOfNextTick = Date.now();
+      let dt = (timeOfNextTick - this.timeOfLastTick) / 1000;
+
+      this.tick(dt);
+      this.render();
+
+      this.timeOfLastTick = timeOfNextTick;
+    }
+  }
+
+  stopUpdateLoop(): void {
+    this.hasStopped = true;
+  }
+
 }
 
 export default function Stars() {
   let ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    let meteorShower = new MeteorShower();
-    let intervalId = setInterval(() => {
-      try {
-        meteorShower.tick(1 / 60);
-        meteorShower.render(ref);
-      } catch (e) {
-        console.error(e);
-      }
-    }, 1000 / 60);
-    return () => clearInterval(intervalId);
+    let meteorShower = new MeteorShower(ref);
+    meteorShower.setupUpdateLoop();
+
+    return () => meteorShower.stopUpdateLoop();
   }, []);
 
-  return <canvas className="fixed top-0 left-0 w-screen h-screen -z-50 [image-rendering:pixelated]" ref={ref} />;
+  return <canvas className="fixed top-0 left-0 w-screen h-screen select-none pointer-events-none -z-50 [image-rendering:pixelated]" ref={ref} />;
 }
