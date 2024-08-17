@@ -126,10 +126,10 @@ Most of my time spent on this project was spent on design, so hopefully it looks
   {
     title: "Various Game Jam games",
     description: `I've participated in several game jams hosted by the Game Developers Guild, as well as Kiwijam 2023 and 2024. \
-I really enjoy the short-form structure of game jams, because it allows me to take risks and experiment with new ideas. \
+I really enjoy the short-form structure of game jams, because it allows me to take risks and experiment with new ideas while working with friends. \
 One of my titles, "ring_zero", was featured alongside 10 indie games, at the "Spark Game Arena Live" event. \
 I usually work in Unity or Godot, though I try to wear many hats including writing GLSL shaders, \
-creating sound effects, and drawing pixel art. My games collectively have several thousand plays - give them a try!`,
+creating sound effects, and drawing pixel art, depending on the strengths of each team. My games collectively have several thousand plays - give them a try!`,
     yearFrom: 2023,
     yearTo: 2024,
     url: "https://xnopytagameing.itch.io/",
