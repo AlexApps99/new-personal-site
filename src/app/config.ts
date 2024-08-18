@@ -1,7 +1,7 @@
 import { faGithub, faItchIo, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { DM_Sans, Inter, Michroma } from "next/font/google";
-import { Project } from "./sections/projects/Projects";
+import { Project } from "./(home)/Projects";
 import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
 import { Twitter } from "next/dist/lib/metadata/types/twitter-types";
 

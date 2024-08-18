@@ -1,14 +1,13 @@
-import { ABOUT_BODY, HEADING_FONT, NAME, PROJECTS } from "./config";
-import Header from "./header/Header";
-import type { Section } from "./sections/Section";
-import About from "./sections/about/About";
-import Projects from "./sections/projects/Projects";
-import Stars from "./stars";
+import { ABOUT_BODY, HEADING_FONT, NAME, PROJECTS } from "../config";
+import Header from "./Header";
+import type { Section } from "./Section";
+import About from "./About";
+import Projects from "./Projects";
+import Stars from "./Stars";
 
 export default function Home() {
   const sections: Section[] = [
     About({
-      title: "About Me",
       body: ABOUT_BODY
     }),
     Projects(PROJECTS)
@@ -23,7 +22,7 @@ export default function Home() {
       {header}
       <main className="p-4 space-y-8 flex-grow max-w-4xl py-8 lg:py-24 mx-auto text-lg">
         {sections.map((section) => (
-          <section className="" key={section.id} id={section.id}>
+          <section key={section.id} id={section.id}>
             <h2 className={`text-2xl ${HEADING_FONT.className} !font-bold [text-shadow:0_0_4px_rgba(255,255,255,0.5)]`}>{section.headingName || section.name}</h2>
             {section.element}
           </section>

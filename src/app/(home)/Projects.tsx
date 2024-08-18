@@ -1,8 +1,7 @@
 import { faAngular, faAws, faGitAlt, faJira, faNodeJs, faPython, faReact, faRust, faSquareJs, IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import {Section} from '../Section';
+import {Section} from './Section';
 import { faArrowUpRightFromSquare, faBolt, faDatabase, faDragon, faFire, faHashtag, faLaptopCode, faLayerGroup, faMicrochip, faMobileAlt, faNetworkWired, faPeopleGroup, faRobot, faShapes, faShieldHalved, faTerminal, faWrench } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { HEADING_FONT } from '@/app/config';
 
 export type Project = {
   title: string;
@@ -81,45 +80,43 @@ export default function Projects(projects: Project[]): Section {
     id: "projects",
     name: "Projects",
     element: (
-      <>
-        <ul className="">
-          {projects.map((project) => (
-            <li key={project.title} className="">
-              <figure className="m-4 p-2 border-slate-700 bg-slate-700 bg-opacity-50 border-2 rounded-lg shadow-inner shadow-slate-900/50 block">
-                <figcaption className="font-bold text-xl flex justify-between">
-                  <span className="block">
-                  {
-                  (project.url) ?
-                     <a href={project.url} target="_blank" className="glow-hover group">{project.title}&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="group-hover:[transform:scale(1.25)] transition-transform" /></a>
+      <ul>
+        {projects.map((project) => (
+          <li key={project.title}>
+            <figure className="m-4 p-2 border-slate-700 bg-slate-700 bg-opacity-50 border-2 rounded-lg shadow-inner shadow-slate-900/50 block">
+              <figcaption className="font-bold text-xl flex justify-between">
+                <span className="block">
+                {
+                (project.url) ?
+                   <a href={project.url} target="_blank" className="glow-hover group">{project.title}&nbsp;<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="group-hover:[transform:scale(1.25)] transition-transform" /></a>
+                :
+                  project.title
+                }
+                </span>
+                <span className="block text-slate-400 text-sm">{
+                  (project.yearTo == null || project.yearTo == null || project.yearFrom === project.yearTo) ?
+                    (project.yearFrom ?? project.yearTo ?? '')
                   :
-                    project.title
-                  }
-                  </span>
-                  <span className="block text-slate-400 text-sm">{
-                    (project.yearTo == null || project.yearTo == null || project.yearFrom === project.yearTo) ?
-                      (project.yearFrom ?? project.yearTo ?? '')
-                    :
-                      `${project.yearFrom} - ${project.yearTo}`
-                  }</span>
-                </figcaption>
-                {/* <img src={project.image} alt={project.title} className="w-full rounded-t-xl" /> */}
-                <p className="text-slate-300 p-2">
-                  {project.description}
-                </p>
-                <ul className="flex flex-wrap">
-                  {project.tech.map((tech) => (
-                    <li key={tech} className="m-1 rounded-full px-2 shadow-lg text-sm" style={{"backgroundColor": TECH_CATEGORY_COLOURS[TECHS[tech].category].bg, "color": TECH_CATEGORY_COLOURS[TECHS[tech].category].fg}}>
-                      <span className="pr-1"><FontAwesomeIcon icon={TECHS[tech].icon} /></span>
-                      <span>{TECHS[tech].name}</span>
-                    </li>
-                  ))}
-                </ul>
-              </figure>
+                    `${project.yearFrom} - ${project.yearTo}`
+                }</span>
+              </figcaption>
+              {/* <img src={project.image} alt={project.title} className="w-full rounded-t-xl" /> */}
+              <p className="text-slate-300 p-2">
+                {project.description}
+              </p>
+              <ul className="flex flex-wrap">
+                {project.tech.map((tech) => (
+                  <li key={tech} className="m-1 rounded-full px-2 shadow-lg text-sm" style={{"backgroundColor": TECH_CATEGORY_COLOURS[TECHS[tech].category].bg, "color": TECH_CATEGORY_COLOURS[TECHS[tech].category].fg}}>
+                    <span className="pr-1"><FontAwesomeIcon icon={TECHS[tech].icon} /></span>
+                    <span>{TECHS[tech].name}</span>
+                  </li>
+                ))}
+              </ul>
+            </figure>
 
-            </li>
-          ))}
-        </ul>
-      </>
+          </li>
+        ))}
+      </ul>
     )
   };
 }

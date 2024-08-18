@@ -1,7 +1,6 @@
-import { Section } from "../sections/Section";
+import { Section } from "./Section";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NAME, TAGLINE, SOCIALS, HEADING_FONT } from "../config";
-import { useEffect, useState } from "react";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header(sections: Section[]) {
