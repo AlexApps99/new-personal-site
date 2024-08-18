@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-NZ" className={`scroll-smooth overflow-x-clip ${TEXT_FONT.className} ${styles.noiseBackground}`}>
+    <html lang="en-NZ" className={`!scroll-smooth overflow-x-clip ${TEXT_FONT.className} ${styles.noiseBackground}`}>
       <head>
         <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; child-src 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; base-uri 'self'; form-action 'none';" />
       </head>

@@ -1,5 +1,5 @@
 import { ABOUT_BODY, HEADING_FONT, NAME, PROJECTS } from "../config";
-import Header from "./Header";
+import Header, { PAGE_LINKS } from "./Header";
 import type { Section } from "./Section";
 import About from "./About";
 import Projects from "./Projects";
@@ -13,13 +13,16 @@ export default function Home() {
     Projects(PROJECTS)
   ];
 
-  const header = Header(sections);
-
   const currentYear = new Date().getFullYear();
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">
-      {header}
+      <Header pageLinks={PAGE_LINKS} fragLinks={sections.map(s => ({
+        id: s.id,
+        name: s.name,
+        href: `#${s.id}`,
+        type: 'fragment'
+      }))} />
       <main className="p-4 space-y-8 flex-grow max-w-4xl py-8 lg:py-24 mx-auto text-lg">
         {sections.map((section) => (
           <section key={section.id} id={section.id}>
