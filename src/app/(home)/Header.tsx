@@ -42,7 +42,7 @@ export default function Header({ pageLinks, fragLinks }: { pageLinks: HeaderLink
   const SHOW_FRAG_LINKS: boolean = fragLinks != null && fragLinks.length > 0;
 
   return (
-    <header className={`space-x-10 lg:space-x-0 lg:sticky lg:top-0 flex lg:flex-col max-h-screen p-6 lg:p-24 bg-gradient-to-b lg:bg-gradient-to-r from-slate-900/60 from-30% flex-shrink-0 ${HEADING_FONT.className}`}>
+    <header className={`space-x-4 sm:space-x-10 lg:space-x-0 lg:sticky lg:top-0 flex lg:flex-col max-h-screen p-4 sm:p-6 lg:p-24 bg-gradient-to-b lg:bg-gradient-to-r from-slate-900/60 from-30% flex-shrink-0 ${HEADING_FONT.className}`}>
       <div className="lg:mb-12">
         <Link href="/"><h1 className="font-bold text-3xl lg:text-5xl [text-shadow:0_0_8px_rgba(255,255,255,0.5)]">{NAME}</h1></Link>
         <h2 className="whitespace-pre-line text-slate-400 text-base lg:text-xl">{TAGLINE}</h2>
@@ -65,7 +65,7 @@ export default function Header({ pageLinks, fragLinks }: { pageLinks: HeaderLink
           null
       }
 
-      <ul className="items-center flex flex-col lg:flex-row justify-normal text-4xl lg:text-5xl">
+      <ul className="items-center flex flex-col lg:flex-row justify-normal text-3xl lg:text-5xl">
         {
           SOCIALS.map((social) => (
             <li key={social.name} className="m-1">
