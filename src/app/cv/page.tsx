@@ -35,7 +35,7 @@ const CONTACT_DATA: { icon: IconDefinition, data: JSX.Element }[] = [
 ];
 
 const SUMMARY: JSX.Element = <p>
-  I am a driven Part II Software Engineering student at UoA, with a keen interest in solving hard problems.
+  I am a driven 2nd year Software Engineering student at UoA, with a keen interest in solving hard problems.
   I taught myself how to code in high school, and have loved it ever since.
   I learn independently at a rapid pace, shown by the breadth of my personal projects and the scale of my work at Comply Pro.
   I am looking for a challenging role where I can grow my skills and make a difference.
