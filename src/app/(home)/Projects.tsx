@@ -143,8 +143,8 @@ export default function Projects(projects: Project[]): Section {
       <ul>
         {projects.map((project) => (
           <li key={project.title}>
-            <figure className="m-4 p-2 border-slate-700 bg-slate-700 bg-opacity-50 border-2 rounded-lg shadow-inner shadow-slate-900/50 block">
-              <figcaption className="font-bold text-xl flex justify-between">
+            <figure className="m-4 block rounded-lg border-2 border-slate-700 bg-slate-700 bg-opacity-50 p-2 shadow-inner shadow-slate-900/50">
+              <figcaption className="flex justify-between text-xl font-bold">
                 <span className="block">
                   {project.url ? (
                     <a
@@ -155,14 +155,14 @@ export default function Projects(projects: Project[]): Section {
                       {project.title}&nbsp;
                       <FontAwesomeIcon
                         icon={faArrowUpRightFromSquare}
-                        className="group-hover:[transform:scale(1.25)] transition-transform"
+                        className="transition-transform group-hover:[transform:scale(1.25)]"
                       />
                     </a>
                   ) : (
                     project.title
                   )}
                 </span>
-                <span className="block text-slate-400 text-sm">
+                <span className="block text-sm text-slate-400">
                   {project.yearTo == null ||
                   project.yearTo == null ||
                   project.yearFrom === project.yearTo
@@ -171,12 +171,12 @@ export default function Projects(projects: Project[]): Section {
                 </span>
               </figcaption>
               {/* <img src={project.image} alt={project.title} className="w-full rounded-t-xl" /> */}
-              <p className="text-slate-300 p-2">{project.description}</p>
+              <p className="p-2 text-slate-300">{project.description}</p>
               <ul className="flex flex-wrap">
                 {project.tech.map((tech) => (
                   <li
                     key={tech}
-                    className="m-1 rounded-full px-2 shadow-lg text-sm"
+                    className="m-1 rounded-full px-2 text-sm shadow-lg"
                     style={{
                       backgroundColor:
                         TECH_CATEGORY_COLOURS[TECHS[tech].category].bg,

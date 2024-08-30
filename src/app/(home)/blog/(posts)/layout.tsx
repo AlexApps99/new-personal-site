@@ -23,9 +23,7 @@ export default function BlogPostLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <article
-      className={`prose prose-invert max-w-none prose-lg prose-headings:font-display prose-headings:!font-bold prose-headings:[text-shadow:0_0_4px_rgba(255,255,255,0.5)]`}
-    >
+    <article className="prose prose-lg prose-invert max-w-none prose-headings:font-display prose-headings:!font-bold prose-headings:[text-shadow:0_0_4px_rgba(255,255,255,0.5)]">
       {children}
     </article>
   );

@@ -1,17 +1,17 @@
 .download {
-  @apply block absolute top-0 right-0;
+  @apply absolute right-0 top-0 block;
   @apply p-1;
   @apply pr-3;
   /* @apply backdrop-blur-[1px]; */
   @apply rounded-bl-xl;
   @apply bg-green-200/75;
-  @apply border-l-2 border-b-2 border-green-400;
+  @apply border-b-2 border-l-2 border-green-400;
 
   @apply origin-top-right transition-transform hover:scale-110;
 }
 
 ul.thick {
-  @apply list-disc pl-5 my-1;
+  @apply my-1 list-disc pl-5;
 }
 
 ul.thick > li:not(:last-of-type) {

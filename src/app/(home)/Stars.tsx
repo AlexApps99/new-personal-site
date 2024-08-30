@@ -236,7 +236,7 @@ export default function Stars() {
 
   return (
     <canvas
-      className="fixed top-0 left-0 w-screen h-screen select-none pointer-events-none -z-50 [image-rendering:pixelated]"
+      className="pointer-events-none fixed left-0 top-0 -z-50 h-screen w-screen select-none [image-rendering:pixelated]"
       ref={ref}
     />
   );

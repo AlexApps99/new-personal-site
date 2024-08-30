@@ -38,7 +38,7 @@ export default function Header({
         return (
           <Link
             href={href}
-            className={`glow-hover${inPath(href) ? " before:content-['>_']" : ""}`}
+            className={`glow-hover ${inPath(href) ? "before:content-['>_']" : ""}`}
           >
             {name}
           </Link>
@@ -49,7 +49,7 @@ export default function Header({
             {name}&nbsp;
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
-              className="group-hover:[transform:scale(1.25)] transition-transform"
+              className="transition-transform group-hover:[transform:scale(1.25)]"
             />
           </a>
         );
@@ -67,37 +67,33 @@ export default function Header({
   const SHOW_FRAG_LINKS: boolean = fragLinks != null && fragLinks.length > 0;
 
   return (
-    <header
-      className={`space-x-4 sm:space-x-10 lg:space-x-0 lg:sticky lg:top-0 flex lg:flex-col max-h-screen p-4 sm:p-6 lg:p-24 bg-gradient-to-b lg:bg-gradient-to-r from-slate-900/60 from-30% flex-shrink-0 font-display`}
-    >
+    <header className="flex max-h-screen flex-shrink-0 space-x-4 bg-gradient-to-b from-slate-900/60 from-30% p-4 font-display sm:space-x-10 sm:p-6 lg:sticky lg:top-0 lg:flex-col lg:space-x-0 lg:bg-gradient-to-r lg:p-24">
       <div className="lg:mb-12">
         <Link href="/">
-          <h1 className="font-bold text-3xl lg:text-5xl [text-shadow:0_0_8px_rgba(255,255,255,0.5)]">
+          <h1 className="text-3xl font-bold [text-shadow:0_0_8px_rgba(255,255,255,0.5)] lg:text-5xl">
             {NAME}
           </h1>
         </Link>
-        <h2 className="whitespace-pre-line text-slate-400 text-base lg:text-xl">
+        <h2 className="whitespace-pre-line text-base text-slate-400 lg:text-xl">
           {TAGLINE}
         </h2>
       </div>
 
       <ul
-        className={
-          `text-xl flex-grow` + (SHOW_FRAG_LINKS ? " lg:flex-grow-0" : "")
-        }
+        className={`flex-grow text-xl ${SHOW_FRAG_LINKS ? "lg:flex-grow-0" : ""}`}
       >
         {makeHeaderLinks(pageLinks)}
       </ul>
       {SHOW_FRAG_LINKS ? (
         <>
-          <hr className="opacity-20 my-6 hidden lg:block" />
-          <ul className="text-xl flex-grow hidden lg:block">
+          <hr className="my-6 hidden opacity-20 lg:block" />
+          <ul className="hidden flex-grow text-xl lg:block">
             {makeHeaderLinks(fragLinks!)}
           </ul>
         </>
       ) : null}
 
-      <ul className="items-center flex flex-col lg:flex-row justify-normal text-3xl lg:text-5xl">
+      <ul className="flex flex-col items-center justify-normal text-3xl lg:flex-row lg:text-5xl">
         {SOCIALS.map((social) => (
           <li key={social.name} className="m-1">
             <a

@@ -111,7 +111,7 @@ function subheading(
   href?: string,
 ): JSX.Element {
   return (
-    <span className="!pl-0 mt-2 block">
+    <span className="mt-2 block !pl-0">
       <span>
         {href ? (
           <b>
@@ -529,7 +529,7 @@ export default function Cv() {
     <>
       {/* TODO change the link when the PDF changes */}
       <a
-        className={"text-green-600 text-2xl print:!hidden " + styles.download}
+        className={`text-2xl text-green-600 print:!hidden ${styles.download}`}
         href="/cv/cv-2024-04.pdf"
         target="_blank"
         type="application/pdf"
@@ -539,18 +539,18 @@ export default function Cv() {
       </a>
 
       <header>
-        <div className="flex justify-between items-baseline">
+        <div className="flex items-baseline justify-between">
           <h1 className="my-0 text-4xl font-bold">{NAME}</h1>
-          <h2 className="my-0 italic text-right text-lg font-bold">
+          <h2 className="my-0 text-right text-lg font-bold italic">
             Part&nbsp;II Software&nbsp;Engineer @
             University&nbsp;of&nbsp;Auckland
           </h2>
         </div>
-        <ul className="p-0 m-0 py-2 grid justify-between grid-cols-[repeat(2,auto)] sm:grid-cols-[repeat(3,auto)]">
+        <ul className="m-0 grid grid-cols-[repeat(2,auto)] justify-between p-0 py-2 sm:grid-cols-[repeat(3,auto)]">
           {CONTACT_DATA.map(({ icon, data }) => (
             <li key={icon.iconName} className="block whitespace-nowrap">
               <FontAwesomeIcon icon={icon} />
-              <address className="inline not-italic pl-2">{data}</address>
+              <address className="inline pl-2 not-italic">{data}</address>
             </li>
           ))}
         </ul>
@@ -562,9 +562,9 @@ export default function Cv() {
         {SECTIONS.map(({ icon, title, content }) => (
           <section
             key={title}
-            className={"print:break-inside-avoid " + styles.indentedSummary}
+            className={`print:break-inside-avoid ${styles.indentedSummary}`}
           >
-            <h2 className="rounded-full !pl-2 text-lg bg-gradient-to-t from-[rgba(32,255,32,1.0)] to-[rgba(32,255,32,0.25)] font-bold my-3">
+            <h2 className="my-3 rounded-full bg-gradient-to-t from-[rgba(32,255,32,1.0)] to-[rgba(32,255,32,0.25)] !pl-2 text-lg font-bold">
               <FontAwesomeIcon icon={icon} /> {title}
             </h2>
             {content}

@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-NZ"
-      className={`!scroll-smooth overflow-x-clip ${TEXT_FONT.variable} ${HEADING_FONT.variable} ${styles.noiseBackground}`}
+      className={`overflow-x-clip !scroll-smooth ${TEXT_FONT.variable} ${HEADING_FONT.variable} ${styles.noiseBackground}`}
     >
       <head>
         <meta

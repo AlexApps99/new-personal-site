@@ -23,9 +23,9 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen">
+    <div className="flex min-h-screen flex-col lg:flex-row">
       <Header pageLinks={PAGE_LINKS} fragLinks={FRAG_LINKS} />
-      <main className="p-4 space-y-8 flex-grow max-w-4xl py-8 lg:py-24 mx-auto text-lg">
+      <main className="mx-auto max-w-4xl flex-grow space-y-8 p-4 py-8 text-lg lg:py-24">
         {children}
       </main>
     </div>

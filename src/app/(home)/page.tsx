@@ -16,7 +16,7 @@ export default function Home() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen">
+    <div className="flex min-h-screen flex-col lg:flex-row">
       <Header
         pageLinks={PAGE_LINKS}
         fragLinks={sections.map((s) => ({
@@ -26,10 +26,10 @@ export default function Home() {
           type: "fragment",
         }))}
       />
-      <main className="p-4 space-y-8 flex-grow max-w-4xl py-8 lg:py-24 mx-auto text-lg">
+      <main className="mx-auto max-w-4xl flex-grow space-y-8 p-4 py-8 text-lg lg:py-24">
         {sections.map((section) => (
           <section key={section.id} id={section.id}>
-            <h2 className="text-2xl font-display !font-bold [text-shadow:0_0_4px_rgba(255,255,255,0.5)]">
+            <h2 className="font-display text-2xl !font-bold [text-shadow:0_0_4px_rgba(255,255,255,0.5)]">
               {section.headingName || section.name}
             </h2>
             {section.element}
