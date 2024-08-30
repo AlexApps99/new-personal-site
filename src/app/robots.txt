@@ -9,3 +9,8 @@ Disallow: /cv/
 Disallow: /moist$
 Disallow: /moist.html$
 Disallow: /moist/
+
+# Blog (no content yet)
+Disallow: /blog$
+Disallow: /blog.html$
+Disallow: /blog/
