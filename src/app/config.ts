@@ -10,7 +10,7 @@ export const IN_DEV_MODE: boolean = process.env.NODE_ENV === "development";
 export const INCLUDE_PHONE_IN_RESUME: boolean = IN_DEV_MODE;
 
 // set to null to disable
-export const GOOGLE_ANALYTICS_ID: string | null = "G-MCN4KKHP88";
+export const GOOGLE_ANALYTICS_ID: string | null = IN_DEV_MODE ? null : "G-MCN4KKHP88";
 
 export const HEADING_FONT = Michroma({ weight: "400", subsets: ["latin"] });
 
