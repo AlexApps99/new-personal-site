@@ -1,10 +1,10 @@
-import createMDX from '@next/mdx';
+import createMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
 let nextConfig = {
-  output: 'export',
-  crossOrigin: 'anonymous',
-  pageExtensions: ['ts', 'tsx', 'mdx'],
+  output: "export",
+  crossOrigin: "anonymous",
+  pageExtensions: ["ts", "tsx", "mdx"],
 };
 
 const withMDX = createMDX({

@@ -13,9 +13,9 @@ export function deobfuscate(x: string): string {
 const DELAY_MS = 5000;
 
 function getStyling(className?: string, text?: string, href?: string): string {
-  let extraClassNames = 'transition-[opacity,filter] duration-500';
+  let extraClassNames = "transition-[opacity,filter] duration-500";
   if (text === undefined || href === undefined) {
-    extraClassNames += ' blur-sm animate-pulse';
+    extraClassNames += " blur-sm animate-pulse";
   }
   if (className !== undefined) {
     return `${className} ${extraClassNames}`;
@@ -24,9 +24,25 @@ function getStyling(className?: string, text?: string, href?: string): string {
   }
 }
 
-export default function ObfuscatedLink({ className, text, href, target, placeholder }: { className?: string, text: string, href: string, target?: string, placeholder: string }) {
-  let [deobfuscatedText, setDeobfuscatedText] = useState<string | undefined>(undefined);
-  let [deobfuscatedHref, setDeobfuscatedHref] = useState<string | undefined>(undefined);
+export default function ObfuscatedLink({
+  className,
+  text,
+  href,
+  target,
+  placeholder,
+}: {
+  className?: string;
+  text: string;
+  href: string;
+  target?: string;
+  placeholder: string;
+}) {
+  let [deobfuscatedText, setDeobfuscatedText] = useState<string | undefined>(
+    undefined,
+  );
+  let [deobfuscatedHref, setDeobfuscatedHref] = useState<string | undefined>(
+    undefined,
+  );
 
   useEffect(() => {
     setDeobfuscatedText(undefined);
@@ -45,6 +61,12 @@ export default function ObfuscatedLink({ className, text, href, target, placehol
   }, [href]);
 
   return (
-    <a href={deobfuscatedHref} className={getStyling(className, deobfuscatedText, deobfuscatedHref)} target={target}>{deobfuscatedText ?? placeholder}</a>
+    <a
+      href={deobfuscatedHref}
+      className={getStyling(className, deobfuscatedText, deobfuscatedHref)}
+      target={target}
+    >
+      {deobfuscatedText ?? placeholder}
+    </a>
   );
 }

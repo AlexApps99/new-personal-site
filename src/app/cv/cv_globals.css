@@ -8,7 +8,8 @@ html {
   /* Add a little banner thing to the top of the PDF */
   /* The SVG renders badly in some PDF viewers, so I use a PNG */
   background:
-    url("./tile_circuit.png") top/auto 80px repeat-x, white !important;
+    url("./tile_circuit.png") top/auto 80px repeat-x,
+    white !important;
 
   color: black !important;
   color-scheme: light only !important;
@@ -34,7 +35,13 @@ html > body {
 
     background:
       url("./tile_circuit.png") top/auto 80px repeat-x,
-      linear-gradient(90deg, var(--edge-col), white var(--edge-percent), white calc(100% - var(--edge-percent)), var(--edge-col)),
+      linear-gradient(
+        90deg,
+        var(--edge-col),
+        white var(--edge-percent),
+        white calc(100% - var(--edge-percent)),
+        var(--edge-col)
+      ),
       white !important;
   }
 

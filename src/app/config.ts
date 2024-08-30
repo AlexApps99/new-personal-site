@@ -1,4 +1,8 @@
-import { faGithub, faItchIo, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faItchIo,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { DM_Sans, Inter, Michroma } from "next/font/google";
 import { Project } from "./(home)/Projects";
@@ -10,38 +14,51 @@ export const IN_DEV_MODE: boolean = process.env.NODE_ENV === "development";
 export const INCLUDE_PHONE_IN_RESUME: boolean = IN_DEV_MODE;
 
 // set to null to disable
-export const GOOGLE_ANALYTICS_ID: string | null = IN_DEV_MODE ? null : "G-MCN4KKHP88";
+export const GOOGLE_ANALYTICS_ID: string | null = IN_DEV_MODE
+  ? null
+  : "G-MCN4KKHP88";
 
 export const HEADING_FONT = Michroma({ weight: "400", subsets: ["latin"] });
 
 // export const TEXT_FONT = Inter({ weight: ["400", "700"], subsets: ["latin"] });
-export const TEXT_FONT = DM_Sans({ weight: ["400", "700"], subsets: ["latin"] });
+export const TEXT_FONT = DM_Sans({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export const BASE_URL: string = "https://alexbrown.nz";
 
 export const NAME: string = "Alex Brown";
 
-export const TAGLINE: string = "Problem solver,\nsoftware engineer,\nand student";
+export const TAGLINE: string =
+  "Problem solver,\nsoftware engineer,\nand student";
 
 export const PAGE_TITLE: string = "Alex Brown";
 
 export const EXTERNAL_PAGE_TITLE: string = "Alex Brown's personal site";
 
-export const EXTERNAL_PAGE_DESCRIPTION: string = "A driven 2nd year Software Engineering student at UoA, with a keen interest in solving hard problems.";
+export const EXTERNAL_PAGE_DESCRIPTION: string =
+  "A driven 2nd year Software Engineering student at UoA, with a keen interest in solving hard problems.";
 
-export const KEYWORDS: string[] = ["Alex Brown", "software engineer", "embedded", "resume", "university"];
+export const KEYWORDS: string[] = [
+  "Alex Brown",
+  "software engineer",
+  "embedded",
+  "resume",
+  "university",
+];
 
 export const OPENGRAPH: OpenGraph = {
   // should be overriden by each page
   title: EXTERNAL_PAGE_TITLE,
   description: EXTERNAL_PAGE_DESCRIPTION,
   url: "./",
-  locale: 'en_NZ',
-  type: 'website',
+  locale: "en_NZ",
+  type: "website",
 };
 
 export const TWITTER: Twitter = {
-  card: 'summary',
+  card: "summary",
   // should be overriden by each page
   title: EXTERNAL_PAGE_TITLE,
   description: EXTERNAL_PAGE_DESCRIPTION,
@@ -66,7 +83,7 @@ export const SOCIALS: {
     name: "Itch.io",
     url: "https://xnopytagameing.itch.io/",
     icon: faItchIo,
-  }
+  },
   // {
   //   name: "Feed",
   //   // TODO implement this lol
@@ -96,7 +113,7 @@ and sprite rotation using per-pixel trigonometry and matrix multiplication. \
 It plays Bad Apple!`,
     yearFrom: 2024,
     yearTo: 2024,
-    tech: ["vhdl", "git", "python", "team"]
+    tech: ["vhdl", "git", "python", "team"],
   },
   {
     title: "APSS-2 Kessler firmware",
@@ -107,7 +124,7 @@ I've been working closely with the team, and spending a large amount of time tes
 the firmware on the satellite's hardware.`,
     yearFrom: 2024,
     yearTo: 2024,
-    tech: ["c", "freertos", "make", "rust", "git", "team", "jira"]
+    tech: ["c", "freertos", "make", "rust", "git", "team", "jira"],
   },
   {
     title: "APSS Pico-SAT 2024",
@@ -117,7 +134,7 @@ and wrote the firmware in C++. The satellite recorded barometric telemetry data 
 The hardest part of the project was searching for the satellite after it landed in a field.`,
     yearFrom: 2024,
     yearTo: 2024,
-    tech: ["cpp", "pcb", "make", "git", "team"]
+    tech: ["cpp", "pcb", "make", "git", "team"],
   },
   {
     title: "Portfolio site, Résumé",
@@ -125,7 +142,7 @@ The hardest part of the project was searching for the satellite after it landed 
 Most of my time spent on this project was spent on design, so hopefully it looks nice!`,
     yearFrom: 2024,
     yearTo: 2024,
-    tech: ["js", "react"]
+    tech: ["js", "react"],
   },
   {
     title: "Various Game Jam games",
@@ -137,7 +154,7 @@ creating sound effects, and drawing pixel art, depending on the strengths of eac
     yearFrom: 2023,
     yearTo: 2024,
     url: "https://xnopytagameing.itch.io/",
-    tech: ["csharp", "godot", "opengl", "git", "team"]
+    tech: ["csharp", "godot", "opengl", "git", "team"],
   },
   {
     title: "WDCC x SESA Hackathon 2024",
@@ -151,7 +168,7 @@ and reverse proxied behind NGINX.`,
     yearFrom: 2024,
     yearTo: 2024,
     url: "https://space.feroxfoxxo.com/",
-    tech: ["csharp", "js", "react", "websockets", "git", "team"]
+    tech: ["csharp", "js", "react", "websockets", "git", "team"],
   },
   /*
   {
@@ -223,7 +240,8 @@ and reverse proxied behind NGINX.`,
   */
   {
     title: "Other?",
-    description: "See my GitHub for more projects - there are lots of shorter projects and experiments that I haven't listed here.",
-    tech: []
-  }
+    description:
+      "See my GitHub for more projects - there are lots of shorter projects and experiments that I haven't listed here.",
+    tech: [],
+  },
 ];

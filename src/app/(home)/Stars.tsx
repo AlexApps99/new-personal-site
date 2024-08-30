@@ -2,11 +2,13 @@
 
 import { RefObject, useEffect, useRef } from "react";
 
-function generateStars(count: number): { x: number; y: number; z: number; intensity: number; }[] {
+function generateStars(
+  count: number,
+): { x: number; y: number; z: number; intensity: number }[] {
   const MIN_MAG = 0.05;
   const MIN_MAG_SQUARED = MIN_MAG * MIN_MAG;
 
-  let stars: { x: number; y: number; z: number; intensity: number; }[] = [];
+  let stars: { x: number; y: number; z: number; intensity: number }[] = [];
   for (let i = 0; i < count; i++) {
     let x, y, z, magSquared;
     do {
@@ -73,7 +75,7 @@ class MeteorShower {
       currentProgress: 0.0,
       speed,
       brightness,
-      hue
+      hue,
     });
   }
 
@@ -101,7 +103,10 @@ class MeteorShower {
       let idealHeight = this.ctx.canvas.clientHeight / PIXEL_DIVIDER;
       idealWidth = Math.max(Math.round(idealWidth), 1);
       idealHeight = Math.max(Math.round(idealHeight), 1);
-      if (idealWidth !== this.ctx.canvas.width || idealHeight !== this.ctx.canvas.height) {
+      if (
+        idealWidth !== this.ctx.canvas.width ||
+        idealHeight !== this.ctx.canvas.height
+      ) {
         this.ctx.canvas.width = idealWidth;
         this.ctx.canvas.height = idealHeight;
       }
@@ -118,7 +123,7 @@ class MeteorShower {
 
     this.resizeCanvasAndClear();
 
-    this.ctx!.lineCap = 'round';
+    this.ctx!.lineCap = "round";
     this.ctx!.lineWidth = 2;
 
     this.activeMeteors.forEach((meteor) => {
@@ -131,11 +136,21 @@ class MeteorShower {
       const x = startX + (endX - startX) * meteor.currentProgress;
       const y = startY + (endY - startY) * meteor.currentProgress;
       const hueStr = meteor.hue.toFixed(10) + "turn";
-      const gradient = this.ctx!.createLinearGradient(startX, startY, endX, endY);
+      const gradient = this.ctx!.createLinearGradient(
+        startX,
+        startY,
+        endX,
+        endY,
+      );
       gradient.addColorStop(0, `hsl(${hueStr} 100% 70% / 0)`);
-      const brightnessFactor = (1 - Math.exp(5*(meteor.currentProgress - 1)));
-      let lineBrightnessStr = (meteor.brightness * brightnessFactor).toFixed(10);
-      gradient.addColorStop(1, `hsl(${hueStr} 100% 70% / ${lineBrightnessStr})`);
+      const brightnessFactor = 1 - Math.exp(5 * (meteor.currentProgress - 1));
+      let lineBrightnessStr = (meteor.brightness * brightnessFactor).toFixed(
+        10,
+      );
+      gradient.addColorStop(
+        1,
+        `hsl(${hueStr} 100% 70% / ${lineBrightnessStr})`,
+      );
       this.ctx!.beginPath();
       this.ctx!.moveTo(startX, startY);
       this.ctx!.lineTo(x, y);
@@ -144,8 +159,15 @@ class MeteorShower {
 
       const r0 = 4;
       const radialGradient = this.ctx!.createRadialGradient(x, y, 0, x, y, r0);
-      let radialBrightnessStr = (0.5 * meteor.brightness * brightnessFactor).toFixed(10);
-      radialGradient.addColorStop(0, `hsl(${hueStr} 100% 50% / ${radialBrightnessStr})`);
+      let radialBrightnessStr = (
+        0.5 *
+        meteor.brightness *
+        brightnessFactor
+      ).toFixed(10);
+      radialGradient.addColorStop(
+        0,
+        `hsl(${hueStr} 100% 50% / ${radialBrightnessStr})`,
+      );
       radialGradient.addColorStop(1, `hsl(${hueStr} 100% 50% / 0)`);
       this.ctx!.fillStyle = radialGradient;
       this.ctx!.fillRect(x - r0, y - r0, x + r0, y + r0);
@@ -156,13 +178,16 @@ class MeteorShower {
     this.activeMeteors.forEach((meteor) => {
       meteor.currentProgress += meteor.speed * dt;
     });
-    this.activeMeteors = this.activeMeteors.filter((meteor) => meteor.currentProgress < 1.0);
+    this.activeMeteors = this.activeMeteors.filter(
+      (meteor) => meteor.currentProgress < 1.0,
+    );
 
     this.timeToNextMeteor -= dt;
     if (this.timeToNextMeteor <= 0) {
       this.genRandomMeteor();
       // set next time
-      this.timeToNextMeteor = -Math.log(1 - Math.random()) * AVG_SECONDS_PER_METEOR;
+      this.timeToNextMeteor =
+        -Math.log(1 - Math.random()) * AVG_SECONDS_PER_METEOR;
     }
   }
 
@@ -197,7 +222,6 @@ class MeteorShower {
   stopUpdateLoop(): void {
     this.hasStopped = true;
   }
-
 }
 
 export default function Stars() {
@@ -210,5 +234,10 @@ export default function Stars() {
     return () => meteorShower.stopUpdateLoop();
   }, []);
 
-  return <canvas className="fixed top-0 left-0 w-screen h-screen select-none pointer-events-none -z-50 [image-rendering:pixelated]" ref={ref} />;
+  return (
+    <canvas
+      className="fixed top-0 left-0 w-screen h-screen select-none pointer-events-none -z-50 [image-rendering:pixelated]"
+      ref={ref}
+    />
+  );
 }
