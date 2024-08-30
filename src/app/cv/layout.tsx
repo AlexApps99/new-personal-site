@@ -2,12 +2,11 @@ import "./cv_globals.css";
 import { Metadata, Viewport } from "next";
 import { OPENGRAPH, TWITTER } from "../config";
 
-const PAGE_TITLE = "Alex Brown - CV";
-const EXTERNAL_PAGE_TITLE = "Alex Brown - CV";
+const EXTERNAL_PAGE_TITLE = "Alex Brown's CV";
 
 export const metadata: Metadata = {
   // should be overriden by each page
-  title: PAGE_TITLE,
+  title: "CV",
   openGraph: {
     title: EXTERNAL_PAGE_TITLE,
     ...OPENGRAPH,
@@ -24,17 +23,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    {
-      color: "#32CD32",
-      media: "(prefers-color-scheme: light)",
-    },
-    {
-      color: "#228B22",
-      media: "(prefers-color-scheme: dark)",
-    },
-  ],
-  colorScheme: "dark",
+  themeColor: "#32CD32",
+  colorScheme: "only light",
 };
 
 export default function CvLayout({

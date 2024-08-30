@@ -18,12 +18,17 @@ export const GOOGLE_ANALYTICS_ID: string | null = IN_DEV_MODE
   ? null
   : "G-MCN4KKHP88";
 
-export const HEADING_FONT = Michroma({ weight: "400", subsets: ["latin"] });
+export const HEADING_FONT = Michroma({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-michroma",
+});
 
 // export const TEXT_FONT = Inter({ weight: ["400", "700"], subsets: ["latin"] });
 export const TEXT_FONT = DM_Sans({
   weight: ["400", "700"],
   subsets: ["latin"],
+  variable: "--font-dm-sans",
 });
 
 export const BASE_URL: string = "https://alexbrown.nz";

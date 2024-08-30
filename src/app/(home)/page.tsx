@@ -1,4 +1,4 @@
-import { ABOUT_BODY, HEADING_FONT, NAME, PROJECTS } from "../config";
+import { ABOUT_BODY, NAME, PROJECTS } from "../config";
 import Header, { PAGE_LINKS } from "./Header";
 import type { Section } from "./Section";
 import About from "./About";
@@ -29,9 +29,7 @@ export default function Home() {
       <main className="p-4 space-y-8 flex-grow max-w-4xl py-8 lg:py-24 mx-auto text-lg">
         {sections.map((section) => (
           <section key={section.id} id={section.id}>
-            <h2
-              className={`text-2xl ${HEADING_FONT.className} !font-bold [text-shadow:0_0_4px_rgba(255,255,255,0.5)]`}
-            >
+            <h2 className="text-2xl font-display !font-bold [text-shadow:0_0_4px_rgba(255,255,255,0.5)]">
               {section.headingName || section.name}
             </h2>
             {section.element}

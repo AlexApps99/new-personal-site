@@ -5,6 +5,7 @@ import {
   BASE_URL,
   EXTERNAL_PAGE_DESCRIPTION,
   GOOGLE_ANALYTICS_ID,
+  HEADING_FONT,
   KEYWORDS,
   NAME,
   OPENGRAPH,
@@ -17,7 +18,10 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   // should be overriden by each page
-  title: PAGE_TITLE,
+  title: {
+    template: `%s - ${PAGE_TITLE}`,
+    default: PAGE_TITLE,
+  },
   description: EXTERNAL_PAGE_DESCRIPTION,
   keywords: KEYWORDS,
   authors: [{ name: NAME }],
@@ -56,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-NZ"
-      className={`!scroll-smooth overflow-x-clip ${TEXT_FONT.className} ${styles.noiseBackground}`}
+      className={`!scroll-smooth overflow-x-clip ${TEXT_FONT.variable} ${HEADING_FONT.variable} ${styles.noiseBackground}`}
     >
       <head>
         <meta

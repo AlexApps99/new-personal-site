@@ -2,7 +2,7 @@
 
 import { HeaderLink, Section } from "./Section";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NAME, TAGLINE, SOCIALS, HEADING_FONT } from "../config";
+import { NAME, TAGLINE, SOCIALS } from "../config";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -68,7 +68,7 @@ export default function Header({
 
   return (
     <header
-      className={`space-x-4 sm:space-x-10 lg:space-x-0 lg:sticky lg:top-0 flex lg:flex-col max-h-screen p-4 sm:p-6 lg:p-24 bg-gradient-to-b lg:bg-gradient-to-r from-slate-900/60 from-30% flex-shrink-0 ${HEADING_FONT.className}`}
+      className={`space-x-4 sm:space-x-10 lg:space-x-0 lg:sticky lg:top-0 flex lg:flex-col max-h-screen p-4 sm:p-6 lg:p-24 bg-gradient-to-b lg:bg-gradient-to-r from-slate-900/60 from-30% flex-shrink-0 font-display`}
     >
       <div className="lg:mb-12">
         <Link href="/">

@@ -15,7 +15,7 @@ const DELAY_MS = 5000;
 function getStyling(className?: string, text?: string, href?: string): string {
   let extraClassNames = "transition-[opacity,filter] duration-500";
   if (text === undefined || href === undefined) {
-    extraClassNames += " blur-sm animate-pulse";
+    extraClassNames += " blur-sm animate-pulse select-none";
   }
   if (className !== undefined) {
     return `${className} ${extraClassNames}`;
