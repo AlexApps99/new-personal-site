@@ -90,7 +90,7 @@ const CONTACT_DATA: { icon: IconDefinition; data: JSX.Element }[] = [
 
 const SUMMARY: JSX.Element = (
   <p>
-    I am a driven 3rd year Software Engineering student at UoA, with a keen
+    I am a driven 4th year Software Engineering student at UoA, with a keen
     interest in solving hard problems. I taught myself how to code in high
     school, and have loved it ever since. I learn independently at a rapid pace,
     shown by the breadth of my personal projects and the scale of my work at

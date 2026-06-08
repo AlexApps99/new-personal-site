@@ -1,16 +1,18 @@
 User-agent: *
+Disallow: /
 
 # CV page
-Disallow: /cv$
-Disallow: /cv.html$
-Disallow: /cv/
+#Disallow: /cv$
+#Disallow: /cv.html$
+#Disallow: /cv/
 
 # Fluid sim page
-Disallow: /moist$
-Disallow: /moist.html$
-Disallow: /moist/
+#Disallow: /moist$
+#Disallow: /moist.html$
+#Disallow: /moist/
 
 # Blog (no content yet)
-Disallow: /blog$
-Disallow: /blog.html$
-Disallow: /blog/
+#Disallow: /blog$
+#Disallow: /blog.html$
+#Disallow: /blog/
+

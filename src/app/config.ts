@@ -43,7 +43,7 @@ export const PAGE_TITLE: string = "Alex Brown";
 export const EXTERNAL_PAGE_TITLE: string = "Alex Brown's personal site";
 
 export const EXTERNAL_PAGE_DESCRIPTION: string =
-  "A driven 3rd year Software Engineering student at UoA, with a keen interest in solving hard problems.";
+  "A driven 4th year Software Engineering student at UoA, with a keen interest in solving hard problems.";
 
 export const KEYWORDS: string[] = [
   "Alex Brown",
@@ -97,7 +97,7 @@ export const SOCIALS: {
   // }
 ];
 
-export const ABOUT_BODY: string = `I am a driven 2nd year Software Engineering student at UoA, \
+export const ABOUT_BODY: string = `I am a driven 4th year Software Engineering student at UoA, \
 with a keen interest in solving hard problems.
 I taught myself how to code in high school, and have loved it ever since. \
 Recently I've been tinkering a lot with FPGAs and embedded hardware, \
